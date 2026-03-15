@@ -3,62 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aide Animale | Bracelet Souvenir</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Aide Animale | Sauvez une vie, portez un souvenir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #FF7E67; --secondary: #2F5D62; --accent: #FFD5CD; --bg: #FFF9F8; --text: #2D2D2D; --white: #ffffff; }
+        :root {
+            --primary: #FF7E67; /* Rose Corail Chaleureux */
+            --secondary: #2F5D62; /* Vert Forêt Rassurant */
+            --accent: #FFF1EE; /* Beige Doux de fond */
+            --white: #ffffff;
+            --text: #2D2D2D;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--accent); color: var(--text); line-height: 1.6; padding: 20px; }
         .container { max-width: 450px; margin: 0 auto; }
-        header { text-align: center; padding: 20px 0; }
-        h1 { font-weight: 800; font-size: 1.8rem; color: var(--secondary); margin-bottom: 10px; }
-        
-        .impact-box { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; text-align: center; }
-        .impact-card { background: white; padding: 15px 5px; border-radius: 18px; border: 1px solid #f0f0f0; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .impact-card b { display: block; color: var(--primary); font-size: 1.1rem; }
-        .impact-card span { font-size: 0.75rem; font-weight: 600; color: var(--secondary); display: block; margin-top: 5px; }
 
-        .card { background: var(--white); border-radius: 30px; padding: 25px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(255, 126, 103, 0.1); text-align: center; }
+        header { text-align: center; padding: 30px 0 20px; }
+        .logo { font-size: 3rem; margin-bottom: 10px; }
+        h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 2.2rem; color: var(--secondary); margin-bottom: 10px; line-height: 1.2; }
         
-        /* IMAGE TEST */
-        .main-img { width: 100%; border-radius: 20px; margin-bottom: 15px; }
+        .impact-box { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 25px 0; text-align: center; }
+        .impact-card { background: white; padding: 18px 5px; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .impact-card b { display: block; color: var(--primary); font-size: 1.3rem; font-weight: 800; }
+        .impact-card span { font-size: 0.8rem; font-weight: 600; color: var(--secondary); display: block; margin-top: 5px; }
 
-        /* BOUTONS */
-        .btn { display: block; width: 100%; padding: 18px; text-align: center; border-radius: 20px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: 0.3s; border: none; cursor: pointer; margin-top: 10px; }
-        .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 8px 20px rgba(255, 126, 103, 0.3); }
-        .btn-outline { background-color: var(--accent); color: var(--primary); }
+        .card { background: var(--white); border-radius: 30px; padding: 30px; margin-bottom: 25px; box-shadow: 0 15px 40px rgba(255, 126, 103, 0.1); text-align: center; border: 1px solid rgba(255,126,103,0.05); }
+        
+        /* IMAGE PRINCIPALE */
+        .main-img-container { width: 100%; aspect-ratio: 1/1; border-radius: 20px; overflow: hidden; margin-bottom: 20px; background: #F7F7F7; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .main-img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* TEXTE SENSIBLE */
+        .sensible-title { font-size: 1.3rem; color: var(--secondary); font-weight: 800; margin-bottom: 12px; }
+        .sensible-text { font-size: 0.95rem; color: #555; margin-bottom: 20px; text-align: left; line-height: 1.6; }
+        .highlight { color: var(--primary); font-weight: 600; }
+
+        /* BOUTONS COSY */
+        .btn { display: block; width: 100%; padding: 20px; text-align: center; border-radius: 20px; font-weight: 700; font-size: 1.15rem; text-decoration: none; transition: 0.3s; border: none; cursor: pointer; margin-top: 15px; }
+        .btn-primary { 
+            background-color: var(--primary); color: white; 
+            box-shadow: 0 10px 25px rgba(255, 126, 103, 0.3); 
+            animation: pulse 2s infinite; 
+        }
+        .btn-outline { background-color: #f1f8f8; color: var(--secondary); border: 1px solid #e0eeee; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: #aaa; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>🐾 Aide Animale</h1>
-        <p>Un petit geste pour une grande cause.</p>
+        <div class="logo">🐱❤️🐶</div>
+        <h1>Leur survie tient à un fil... ou à un bracelet.</h1>
+        <p style="color: #666; font-size: 1rem; max-width: 300px; margin: 0 auto;">Chaque scan offre un repas, un soin, une seconde chance.</p>
     </header>
 
     <div class="impact-box">
         <div class="impact-card"><b>5€</b><span>1 repas</span></div>
-        <div class="impact-card"><b>15€</b><span>1 vaccin</span></div>
-        <div class="impact-card"><b>50€</b><span>1 soin</span></div>
+        <div class="impact-card"><b>15€</b><span>1 vaccin vital</span></div>
+        <div class="impact-card"><b>50€</b><span>1 opération</span></div>
     </div>
 
     <div class="card">
-        <h2 style="margin-bottom: 15px; color: var(--secondary);">Votre Bracelet Souvenir</h2>
-        <img src="-1106250143-76688371.jpg" class="main-img" alt="Bracelet">
+        <h2 class="sensible-title">Votre compagnon, pour toujours près de vous.</h2>
         
-        <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">Personnalisé avec la photo de votre compagnon.</p>
+        <div class="main-img-container">
+            <img src="-1106250143-76688371.jpg" alt="Bracelet Souvenir">
+        </div>
         
-        <a href="https://buy.stripe.com/6oU6oJaZigp9fsJfRX67S00" class="btn btn-primary">Faire un don de 15€</a>
+        <p class="sensible-text">
+            Derrière chaque regard, il y a une histoire... Parfois de joie, trop souvent de souffrance. En offrant <span class="highlight">dès 15€</span>, vous sauvez un animal de la rue et vous recevez ce <span class="highlight">bracelet souvenir</span> unique. Portez-le fièrement : il est la preuve que grâce à vous, un cœur bat un peu plus fort aujourd'hui.
+        </p>
+        
+        <a href="https://buy.stripe.com/cNicN76J20qb6Wd0X367S02" class="btn btn-primary">Faire un don (dès 15€) et recevoir mon bijou</a>
+        <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">✨ <i>Vous pourrez ajuster le montant pour nos protégés juste après avoir cliqué.</i></p>
     </div>
 
-    <div class="card">
-        <h2 style="font-size: 1.1rem; color: var(--secondary);">❤️ Don Libre</h2>
-        <a href="https://buy.stripe.com/6oU6oJaZigp9fsJfRX67S00" class="btn btn-outline">Donner le montant de mon choix</a>
+    <div class="card" style="padding: 20px 30px;">
+        <h2 style="font-size: 1.1rem; color: var(--secondary);">❤️ Un simple geste, sans rien en retour.</h2>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Pour eux, un euro change tout. Donner le montant de mon choix.</p>
+        
+        <a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn btn-outline">Choisir un autre montant</a>
     </div>
 
-    <footer style="text-align: center; font-size: 0.8rem; color: #999; margin-top: 20px;">
-        © 2024 Aide Animale • Paiement sécurisé via Stripe
+    <footer>
+        <p>© 2024 Aide Animale • Action immédiate</p>
+        <p>Paiement sécurisé via Stripe</p>
     </footer>
 </div>
 
