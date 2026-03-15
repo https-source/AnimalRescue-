@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aide Animale | Sauver une vie</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
 --orange:#ff7a45;
---soft:#fff7f3;
+--orange-light:#fff1eb;
+--soft-blue:#e8f4f8;
 --dark:#2b2b2b;
 }
 
@@ -23,7 +25,7 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:white;
+background:#fdfdfd;
 color:var(--dark);
 line-height:1.6;
 padding:20px;
@@ -36,88 +38,147 @@ margin:auto;
 
 header{
 text-align:center;
-margin-bottom:30px;
+margin-bottom:40px;
 }
 
 .logo{
-width:140px;
-margin-bottom:15px;
+width:160px;
+margin-bottom:20px;
 }
 
 h1{
-font-size:32px;
-font-weight:700;
+font-family:'Fredoka',sans-serif;
+font-size:34px;
+color:var(--orange);
 margin-bottom:10px;
 }
 
 .subtitle{
-color:#666;
-font-size:15px;
+color:#777;
+font-size:16px;
+max-width:85%;
+margin:auto;
 }
 
+/* HERO */
+
 .hero{
-background:var(--soft);
+background:var(--orange-light);
 padding:28px;
-border-radius:26px;
-margin-bottom:30px;
+border-radius:35px;
+margin-bottom:35px;
+box-shadow:0 15px 30px rgba(255,122,69,0.05);
 }
 
 .hero img{
 width:100%;
-border-radius:18px;
+border-radius:25px;
 margin-bottom:18px;
 }
 
 .hero p{
 font-size:15px;
-margin-bottom:18px;
+text-align:center;
+margin-bottom:20px;
 }
+
+/* SLIDER */
+
+.slider-container{
+display:flex;
+gap:15px;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+}
+
+.slider-container::-webkit-scrollbar{
+display:none;
+}
+
+.slider-item{
+min-width:85%;
+scroll-snap-align:center;
+}
+
+/* IMPACT COUNTER */
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin:25px 0;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat b{
+display:block;
+font-size:20px;
+color:var(--orange);
+}
+
+.stat span{
+font-size:12px;
+color:#888;
+}
+
+/* STORY */
 
 .story{
 margin-bottom:30px;
 font-size:15px;
+padding:0 10px;
 }
+
+.story b{
+color:var(--orange);
+}
+
+/* IMPACT GRID */
 
 .impact{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:10px;
+gap:12px;
 margin:25px 0;
 }
 
 .impact div{
 text-align:center;
-padding:14px;
-border-radius:18px;
-background:#fff;
-border:1px solid #eee;
+padding:20px 10px;
+border-radius:20px;
+background:white;
+border:1px solid #f0f0f0;
 }
 
 .impact b{
-display:block;
 color:var(--orange);
-font-size:18px;
+font-size:20px;
+display:block;
 }
 
 .impact span{
-font-size:12px;
-color:#777;
+font-size:11px;
+color:#888;
 }
+
+/* BOUTONS */
 
 .btn{
 display:block;
 text-align:center;
-padding:18px;
-border-radius:18px;
-font-weight:600;
+padding:20px;
+border-radius:22px;
+font-weight:700;
 text-decoration:none;
-margin-top:12px;
 }
 
 .primary{
 background:var(--orange);
 color:white;
 font-size:18px;
+box-shadow:0 10px 25px rgba(255,122,69,0.3);
 }
 
 .secondary{
@@ -126,25 +187,44 @@ color:var(--orange);
 background:white;
 }
 
+/* NOTE */
+
 .note{
 font-size:13px;
-color:#777;
-margin-top:12px;
+color:#946250;
+margin-top:15px;
 text-align:center;
 }
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:white;
+border-radius:25px;
+padding:20px;
+margin-bottom:30px;
+border:1px solid #eee;
+font-size:14px;
+}
+
+.testimonial b{
+color:var(--orange);
+}
+
+/* SECURE */
 
 .secure{
 text-align:center;
 font-size:12px;
-margin-top:20px;
 color:#999;
+margin-top:20px;
 }
 
 footer{
-margin-top:30px;
 text-align:center;
 font-size:12px;
-color:#bbb;
+color:#ccc;
+margin-top:40px;
 }
 
 </style>
@@ -158,30 +238,56 @@ color:#bbb;
 
 <img src="1773582841556.png" class="logo">
 
-<h1>Un simple geste peut sauver une vie</h1>
+<h1>Redonner une chance à ceux qui n'en ont plus</h1>
 
 <p class="subtitle">
-Chaque don donne une seconde chance à un animal abandonné.
+Chaque don sauve une vie. Votre geste peut changer leur destin.
 </p>
 
 </header>
 
 
+<div class="stats">
+
+<div class="stat">
+<b>127</b>
+<span>Animaux aidés</span>
+</div>
+
+<div class="stat">
+<b>94</b>
+<span>Sauvés cette année</span>
+</div>
+
+<div class="stat">
+<b>100%</b>
+<span>Dons utilisés</span>
+</div>
+
+</div>
+
+
 <section class="hero">
 
+<div class="slider-container">
+
+<div class="slider-item">
 <img src="-1106250143-76688371.jpg">
+</div>
+
+</div>
 
 <p>
-En faisant un don d'au moins <b>15€</b>, vous recevez ce bracelet souvenir.
-Un symbole discret mais puissant : celui d'avoir aidé un animal qui n'avait plus personne.
+En faisant un don de <b>15€ ou plus</b>, vous sauvez un animal et recevez ce bracelet souvenir.  
+Un symbole discret mais puissant de votre geste.
 </p>
 
 <a href="https://buy.stripe.com/cNicN76J20qb6Wd0X367S02" class="btn primary">
-Recevoir mon bracelet solidaire
+Sauver un animal & recevoir le bracelet
 </a>
 
 <p class="note">
-Après votre paiement, vous serez redirigé vers un formulaire pour envoyer la photo de votre animal.
+Après le paiement, restez sur la page : vous serez redirigé vers le formulaire pour envoyer la photo de votre animal.
 </p>
 
 </section>
@@ -189,37 +295,33 @@ Après votre paiement, vous serez redirigé vers un formulaire pour envoyer la p
 
 <section class="story">
 
-<p>
-<b>Aide Animale</b> est né d’un combat personnel.
+<p style="margin-bottom:15px">
+<b>Un combat personnel.</b>
 </p>
 
-<p>
-Derrière ce projet se trouve une seule personne, qui se bat chaque jour pour donner une chance aux animaux abandonnés, blessés ou oubliés.
+<p style="margin-bottom:15px">
+Aide Animale est né d'une simple réalité : trop d'animaux sont abandonnés, blessés ou ignorés.
 </p>
 
-<p>
-Sans grande structure, sans subvention, seulement avec la volonté d’aider ceux qui ne peuvent pas se défendre seuls.
-</p>
-
-<p>
-Chaque don permet concrètement :
+<p style="margin-bottom:20px">
+Sans grande organisation derrière, seulement avec la volonté d'aider, je me bats chaque jour pour leur offrir une seconde chance.
 </p>
 
 <div class="impact">
 
 <div>
 <b>5€</b>
-<span>Un repas</span>
+<span>1 repas</span>
 </div>
 
 <div>
 <b>15€</b>
-<span>Un vaccin</span>
+<span>1 vaccin</span>
 </div>
 
 <div>
 <b>50€</b>
-<span>Un soin vétérinaire</span>
+<span>1 soin</span>
 </div>
 
 </div>
@@ -227,10 +329,21 @@ Chaque don permet concrètement :
 </section>
 
 
-<section class="hero" style="background:white;border:1px solid #eee">
+<div class="testimonial">
 
-<p style="text-align:center;margin-bottom:10px">
-Vous souhaitez simplement aider ?
+<b>"Grâce aux dons, Luna a pu être opérée et trouver une famille."</b>
+
+<p style="margin-top:8px">
+Chaque contribution permet d'écrire une nouvelle histoire.
+</p>
+
+</div>
+
+
+<section class="hero" style="background:var(--soft-blue)">
+
+<p style="text-align:center;margin-bottom:12px;font-weight:600">
+Vous souhaitez aider sans bracelet ?
 </p>
 
 <a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn secondary">
@@ -241,7 +354,7 @@ Faire un don libre
 
 
 <div class="secure">
-Paiement sécurisé • Stripe
+Paiement sécurisé via Stripe
 </div>
 
 <footer>
