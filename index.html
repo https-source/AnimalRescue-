@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #e63946;
-            --secondary: #457b9d;
-            --bg: #f8f9fa;
-            --text: #1d1d1f;
+            --primary: #FF7E67; /* Corail doux */
+            --secondary: #2F5D62; /* Vert canard profond */
+            --accent: #FFD5CD;
+            --bg: #FFF9F8;
+            --text: #2D2D2D;
             --white: #ffffff;
         }
 
@@ -24,137 +25,128 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 500px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 450px; margin: 0 auto; padding: 20px; }
 
-        header { text-align: center; padding: 30px 0 15px; }
-        .logo { font-size: 2.5rem; margin-bottom: 10px; }
-        h1 { font-weight: 800; font-size: 1.8rem; line-height: 1.2; margin-bottom: 15px; color: var(--text); }
-        .intro { font-size: 1.05rem; color: #4a4a4a; margin-bottom: 25px; }
+        header { text-align: center; padding: 40px 0 20px; }
+        .logo-container { position: relative; display: inline-block; font-size: 3rem; margin-bottom: 15px; }
+        .heart-icon { position: absolute; top: -10px; right: -10px; font-size: 1.5rem; animation: heartBeat 2s infinite; }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        h1 { font-weight: 800; font-size: 1.9rem; line-height: 1.2; margin-bottom: 15px; color: var(--secondary); letter-spacing: -0.5px; }
+        .intro { font-size: 1.05rem; color: #555; margin-bottom: 25px; padding: 0 10px; }
 
         .card {
             background: var(--white);
-            border-radius: 24px;
+            border-radius: 30px;
             padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(255, 126, 103, 0.1);
+            border: 1px solid rgba(255, 126, 103, 0.05);
+            transition: transform 0.3s ease;
         }
 
-        .gift-card { border: 2.5px solid var(--primary); position: relative; overflow: hidden; }
+        .gift-card { border: 3px solid var(--primary); position: relative; }
+        
         .badge {
-            background: var(--primary); color: white; padding: 6px 16px;
-            font-size: 0.75rem; font-weight: 800; border-radius: 0 0 0 18px;
-            position: absolute; top: 0; right: 0; z-index: 10;
+            background: var(--primary); color: white; padding: 8px 18px;
+            font-size: 0.8rem; font-weight: 800; border-radius: 20px;
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(255, 126, 103, 0.3);
         }
 
-        /* CARROUSEL CSS */
-        .carousel-container {
-            position: relative;
-            margin: 15px -10px; /* Sort un peu pour le look mobile */
-        }
-
+        /* CARROUSEL AMÉLIORÉ */
+        .carousel-container { position: relative; margin: 20px 0; }
         .carousel {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
+            border-radius: 20px;
+            gap: 12px;
             -webkit-overflow-scrolling: touch;
-            border-radius: 15px;
-            gap: 10px;
         }
-
-        .carousel::-webkit-scrollbar { display: none; } /* Cache la barre de défilement */
-
+        .carousel::-webkit-scrollbar { display: none; }
         .carousel-item {
             flex: 0 0 100%;
             scroll-snap-align: start;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f0f0;
-            border-radius: 15px;
-            aspect-ratio: 4/5; /* Format portrait idéal pour mobile */
+            border-radius: 20px;
+            aspect-ratio: 1/1;
             overflow: hidden;
+            background: #f7f7f7;
         }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
 
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .dots { display: flex; justify-content: center; gap: 8px; margin-top: 15px; }
+        .dot { width: 8px; height: 8px; background: #E0E0E0; border-radius: 50%; transition: 0.3s; }
+        .dot.active { background: var(--primary); width: 20px; border-radius: 10px; }
 
-        /* Indicateurs (points) */
-        .dots {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 10px;
-        }
-        .dot {
-            width: 6px;
-            height: 6px;
-            background: #ccc;
-            border-radius: 50%;
-            transition: 0.3s;
-        }
-        .dot.active { background: var(--primary); width: 12px; border-radius: 10px; }
+        .price-tag { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin: 15px 0 5px; display: block; }
+        .gift-title { font-size: 1.3rem; font-weight: 700; color: var(--secondary); margin-bottom: 5px; }
 
-        .price-tag { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 10px 0; display: block; }
-
+        /* BOUTONS */
         .btn {
-            display: block; width: 100%; padding: 18px; text-align: center;
-            border-radius: 16px; font-weight: 700; font-size: 1.1rem;
-            text-decoration: none; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer; border: none;
+            display: block; width: 100%; padding: 20px; text-align: center;
+            border-radius: 20px; font-weight: 700; font-size: 1.1rem;
+            text-decoration: none; transition: all 0.3s ease;
+            cursor: pointer; border: none; margin-top: 15px;
         }
-        .btn:active { transform: scale(0.96); }
-        .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 8px 20px rgba(230, 57, 70, 0.2); }
-        .btn-outline { background-color: transparent; border: 2px solid var(--secondary); color: var(--secondary); }
+        .btn-primary { 
+            background-color: var(--primary); color: white; 
+            box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 25px rgba(255, 126, 103, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 10px 20px rgba(255, 126, 103, 0.3); }
+        }
 
-        .transparency { text-align: center; padding: 20px; font-size: 0.9rem; color: #666; }
-        .impact-list { display: flex; justify-content: space-around; margin: 15px 0; }
-        .impact-item b { display: block; font-size: 1.1rem; color: var(--text); }
+        .btn-outline { background-color: var(--accent); color: var(--primary); }
 
-        footer { text-align: center; padding: 30px 0; font-size: 0.8rem; opacity: 0.5; }
+        /* ÉTAPES */
+        .how-it-works { font-size: 0.85rem; background: #fff; padding: 15px; border-radius: 15px; margin: 15px 0; text-align: left; }
+        .step { margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { animation: fadeIn 0.6s ease forwards; }
+        .transparency { text-align: center; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 20px; }
+        .impact-list { display: flex; justify-content: space-around; margin: 20px 0; }
+        .impact-item b { display: block; font-size: 1.2rem; color: var(--secondary); }
+        .impact-item span { font-size: 0.8rem; color: #777; }
+
+        footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #999; }
+
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header class="fade-in">
-        <div class="logo">🐾</div>
-        <h1>Un scan. Un don.<br>Une vie sauvée.</h1>
-        <p class="intro">En scannant ce sticker, vous avez le pouvoir d'offrir un repas ou un soin à un animal en détresse.</p>
+        <div class="logo-container">🐾<span class="heart-icon">❤️</span></div>
+        <h1>Un petit geste,<br>une grande histoire.</h1>
+        <p class="intro">Transformez votre don en un souvenir éternel et aidez-nous à protéger ceux qui n'ont pas de voix.</p>
     </header>
 
-    <!-- Option Cadeau Bracelet (Mise en avant avec carrousel) -->
-    <div class="card gift-card fade-in">
-        <div class="badge">LE CADEAU SOLIDAIRE</div>
-        <p style="font-weight: 700; font-size: 1.2rem;">🎁 Bracelet Souvenir</p>
+    <div class="card gift-card fade-in" style="animation-delay: 0.1s;">
+        <div class="badge">PROJET SOLIDAIRE</div>
+        <h2 class="gift-title">Le Bracelet "Regard Éternel"</h2>
         <span class="price-tag">Dès 15€ de don</span>
         
-        <p><strong>Votre animal, gravé près de votre cœur.</strong></p>
-        
-        <!-- CARROUSEL D'IMAGES -->
         <div class="carousel-container">
             <div class="carousel" id="carousel">
-                <!-- Image 1 : Porté (Main rose) -->
-                <div class="carousel-item"><img src="photo1.jpg" alt="Bracelet sur mesure"></div>
-                <!-- Image 2 : Packaging Mia -->
-                <div class="carousel-item"><img src="photo2.jpg" alt="Bracelet acier inoxydable"></div>
-                <!-- Image 3 : Porté Toffy -->
-                <div class="carousel-item"><img src="photo3.jpg" alt="Gravure personnalisée"></div>
-                <!-- Image 4 : Packaging Yako -->
-                <div class="carousel-item"><img src="photo4.jpg" alt="Cadeau amoureux des animaux"></div>
-                <!-- Image 5 : Packaging Roma -->
-                <div class="carousel-item"><img src="photo5.jpg" alt="Bracelet solidaire"></div>
-                <!-- Image 6 : Duo de bracelets Keivy -->
-                <div class="carousel-item"><img src="photo6.jpg" alt="Souvenir animal"></div>
-                <!-- Image 7 : Concept Smocky -->
-                <div class="carousel-item"><img src="photo7.jpg" alt="De la photo au bijou"></div>
+                <div class="carousel-item"><img src="-1106250143-76688371.jpg" alt="Aperçu 1"></div>
+                <div class="carousel-item"><img src="-11064547401906711225.jpg" alt="Aperçu 2"></div>
+                <div class="carousel-item"><img src="-11062177481527376802.jpg" alt="Aperçu 3"></div>
+                <div class="carousel-item"><img src="-1106363513-1489958826.jpg" alt="Aperçu 4"></div>
+                <div class="carousel-item"><img src="-11049493181306706119.jpg" alt="Aperçu 5"></div>
+                <div class="carousel-item"><img src="-1106263440-1444508917.jpg" alt="Aperçu 6"></div>
             </div>
             <div class="dots" id="dots">
                 <div class="dot active"></div>
@@ -163,40 +155,40 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
-                <div class="dot"></div>
             </div>
         </div>
 
-        <p style="font-size: 0.9rem; margin-bottom: 20px; color: #555;">
-            Ce bijou unique en acier inoxydable est réalisé à partir de la photo de <b>votre compagnon</b>. Un souvenir éternel qui finance les soins vétérinaires.
-        </p>
+        <div class="how-it-works">
+            <div class="step">✨ <b>1.</b> Faites votre don sécurisé</div>
+            <div class="step">📸 <b>2.</b> Envoyez la photo de votre animal</div>
+            <div class="step">🎁 <b>3.</b> Recevez votre bijou personnalisé</div>
+        </div>
 
-        <a href="VOTRE_LIEN_DON_15_EUROS" class="btn btn-primary">Soutenir et recevoir mon bracelet</a>
+        <a href="VOTRE_LIEN_STRIPE_15" class="btn btn-primary">Je soutiens et je personnalise</a>
     </div>
 
-    <!-- Option Don Libre -->
-    <div class="card fade-in" style="animation-delay: 0.2s;">
-        <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">❤️ Don Libre</p>
-        <p style="margin-bottom: 15px; font-size: 0.95rem;">Chaque euro compte pour remplir les gamelles et offrir des jouets.</p>
-        <a href="VOTRE_LIEN_DON_LIBRE" class="btn btn-outline">Offrir un repas (2€, 5€...)</a>
+    <div class="card fade-in" style="animation-delay: 0.3s;">
+        <p style="font-weight: 700; color: var(--secondary);">🐾 Juste une petite aide ?</p>
+        <p style="font-size: 0.9rem; margin: 5px 0 15px;">Chaque euro remplit une gamelle vide ce soir.</p>
+        <a href="VOTRE_LIEN_STRIPE_LIBRE" class="btn btn-outline">Donner le montant de mon choix</a>
     </div>
 
-    <div class="transparency fade-in" style="animation-delay: 0.4s;">
-        <h3>100% pour eux</h3>
+    <div class="transparency fade-in" style="animation-delay: 0.5s;">
+        <h3 style="color: var(--secondary); font-size: 1rem; margin-bottom: 10px;">Votre impact réel :</h3>
         <div class="impact-list">
-            <div class="impact-item"><b>5€</b> 3 repas</div>
-            <div class="impact-item"><b>15€</b> 1 vaccin</div>
-            <div class="impact-item"><b>50€</b> 1 secours</div>
+            <div class="impact-item"><b>3</b><span>Repas</span></div>
+            <div class="impact-item"><b>1</b><span>Soin</span></div>
+            <div class="impact-item"><b>∞</b><span>Amour</span></div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Aide Animale • Action immédiate via NFC</p>
+        <p>Réalisé avec ❤️ pour nos amis à quatre pattes</p>
+        <p style="margin-top:10px">Expédition sous 10-15 jours • Paiement 100% sécurisé</p>
     </footer>
 </div>
 
 <script>
-    // Gestion des points du carrousel au défilement
     const carousel = document.getElementById('carousel');
     const dots = document.querySelectorAll('.dot');
 
