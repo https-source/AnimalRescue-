@@ -1,84 +1,253 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aide Animale | Sauvez une vie</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FF7E67; /* Orange Corail */
-            --secondary: #3A6D72; 
-            --white: #ffffff;
-            --text: #444444;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aide Animale | Sauver une vie</title>
 
-        /* FORCE LE FOND BLANC ICI */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #FFFFFF !important; 
-            color: var(--text); 
-            line-height: 1.6; 
-            padding: 20px; 
-        }
-        
-        .container { max-width: 450px; margin: 0 auto; background: white; }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header { text-align: center; padding: 30px 0; }
-        
-        /* LOGO */
-        .logo-img { width: 120px; height: auto; margin-bottom: 15px; }
-        
-        h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 2rem; color: var(--secondary); margin-bottom: 10px; }
-        
-        .impact-box { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .impact-card { background: #fff; padding: 15px 5px; border-radius: 20px; border: 1px solid #eee; text-align: center; }
-        .impact-card b { display: block; color: var(--primary); font-size: 1.2rem; }
-        .impact-card span { font-size: 0.75rem; color: var(--secondary); display: block; }
+<style>
 
-        .card { background: #FFF9F8; border-radius: 30px; padding: 25px; margin-bottom: 25px; text-align: center; border: 1px solid rgba(255,126,103,0.1); }
-        
-        .main-img-container { width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 20px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .main-img-container img { width: 100%; display: block; }
+:root{
+--orange:#ff7a45;
+--soft:#fff7f3;
+--dark:#2b2b2b;
+}
 
-        .btn { display: block; width: 100%; padding: 18px; text-align: center; border-radius: 20px; font-weight: 700; font-size: 1.1rem; text-decoration: none; transition: 0.3s; cursor: pointer; }
-        .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 8px 20px rgba(255, 126, 103, 0.2); }
-        .btn-outline { background-color: white; color: var(--primary); border: 2px solid var(--primary); margin-top: 15px; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #bbb; }
-    </style>
+body{
+font-family:'Inter',sans-serif;
+background:white;
+color:var(--dark);
+line-height:1.6;
+padding:20px;
+}
+
+.container{
+max-width:520px;
+margin:auto;
+}
+
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.logo{
+width:140px;
+margin-bottom:15px;
+}
+
+h1{
+font-size:32px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#666;
+font-size:15px;
+}
+
+.hero{
+background:var(--soft);
+padding:28px;
+border-radius:26px;
+margin-bottom:30px;
+}
+
+.hero img{
+width:100%;
+border-radius:18px;
+margin-bottom:18px;
+}
+
+.hero p{
+font-size:15px;
+margin-bottom:18px;
+}
+
+.story{
+margin-bottom:30px;
+font-size:15px;
+}
+
+.impact{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin:25px 0;
+}
+
+.impact div{
+text-align:center;
+padding:14px;
+border-radius:18px;
+background:#fff;
+border:1px solid #eee;
+}
+
+.impact b{
+display:block;
+color:var(--orange);
+font-size:18px;
+}
+
+.impact span{
+font-size:12px;
+color:#777;
+}
+
+.btn{
+display:block;
+text-align:center;
+padding:18px;
+border-radius:18px;
+font-weight:600;
+text-decoration:none;
+margin-top:12px;
+}
+
+.primary{
+background:var(--orange);
+color:white;
+font-size:18px;
+}
+
+.secondary{
+border:2px solid var(--orange);
+color:var(--orange);
+background:white;
+}
+
+.note{
+font-size:13px;
+color:#777;
+margin-top:12px;
+text-align:center;
+}
+
+.secure{
+text-align:center;
+font-size:12px;
+margin-top:20px;
+color:#999;
+}
+
+footer{
+margin-top:30px;
+text-align:center;
+font-size:12px;
+color:#bbb;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <header>
-        <img src="1000116644.png" alt="Logo Aide Animale" class="logo-img">
-        <h1>Un scan. Une vie.</h1>
-    </header>
 
-    <div class="impact-box">
-        <div class="impact-card"><b>5€</b><span>1 repas</span></div>
-        <div class="impact-card"><b>15€</b><span>1 vaccin</span></div>
-        <div class="impact-card"><b>50€</b><span>1 soin</span></div>
-    </div>
+<header>
 
-    <div class="card">
-        <div class="main-img-container">
-            <img src="-1106250143-76688371.jpg" alt="Bracelet Souvenir">
-        </div>
-        <p style="text-align: left; font-size: 0.95rem; margin-bottom: 20px;">
-            En offrant <b>dès 15€</b>, vous sauvez un animal et recevez ce bracelet souvenir unique.
-        </p>
-        <a href="https://buy.stripe.com/cNicN76J20qb6Wd0X367S02" class="btn btn-primary">Recevoir mon bracelet</a>
-    </div>
+<img src="1773582841556.png" class="logo">
 
-    <div class="card" style="background: white; border: 2px dashed #eee;">
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Faire un don libre sans bracelet</p>
-        <a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn btn-outline">Don libre</a>
-    </div>
+<h1>Un simple geste peut sauver une vie</h1>
 
-    <footer>© 2024 Aide Animale • Paiement Sécurisé</footer>
+<p class="subtitle">
+Chaque don donne une seconde chance à un animal abandonné.
+</p>
+
+</header>
+
+
+<section class="hero">
+
+<img src="-1106250143-76688371.jpg">
+
+<p>
+En faisant un don d'au moins <b>15€</b>, vous recevez ce bracelet souvenir.
+Un symbole discret mais puissant : celui d'avoir aidé un animal qui n'avait plus personne.
+</p>
+
+<a href="https://buy.stripe.com/cNicN76J20qb6Wd0X367S02" class="btn primary">
+Recevoir mon bracelet solidaire
+</a>
+
+<p class="note">
+Après votre paiement, vous serez redirigé vers un formulaire pour envoyer la photo de votre animal.
+</p>
+
+</section>
+
+
+<section class="story">
+
+<p>
+<b>Aide Animale</b> est né d’un combat personnel.
+</p>
+
+<p>
+Derrière ce projet se trouve une seule personne, qui se bat chaque jour pour donner une chance aux animaux abandonnés, blessés ou oubliés.
+</p>
+
+<p>
+Sans grande structure, sans subvention, seulement avec la volonté d’aider ceux qui ne peuvent pas se défendre seuls.
+</p>
+
+<p>
+Chaque don permet concrètement :
+</p>
+
+<div class="impact">
+
+<div>
+<b>5€</b>
+<span>Un repas</span>
+</div>
+
+<div>
+<b>15€</b>
+<span>Un vaccin</span>
+</div>
+
+<div>
+<b>50€</b>
+<span>Un soin vétérinaire</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="hero" style="background:white;border:1px solid #eee">
+
+<p style="text-align:center;margin-bottom:10px">
+Vous souhaitez simplement aider ?
+</p>
+
+<a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn secondary">
+Faire un don libre
+</a>
+
+</section>
+
+
+<div class="secure">
+Paiement sécurisé • Stripe
+</div>
+
+<footer>
+© 2024 Aide Animale
+</footer>
+
 </div>
 
 </body>
