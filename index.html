@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soutenez nos animaux | Votre Bracelet Souvenir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #457b9d;
+            --bg: #f8f9fa;
+            --text: #1d1d1f;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 500px; margin: 0 auto; padding: 20px; }
+
+        header { text-align: center; padding: 30px 0 15px; }
+        .logo { font-size: 2.5rem; margin-bottom: 10px; }
+        h1 { font-weight: 800; font-size: 1.8rem; line-height: 1.2; margin-bottom: 15px; color: var(--text); }
+        .intro { font-size: 1.05rem; color: #4a4a4a; margin-bottom: 25px; }
+
+        .card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .gift-card { border: 2.5px solid var(--primary); position: relative; overflow: hidden; }
+        .badge {
+            background: var(--primary); color: white; padding: 6px 16px;
+            font-size: 0.75rem; font-weight: 800; border-radius: 0 0 0 18px;
+            position: absolute; top: 0; right: 0; z-index: 10;
+        }
+
+        /* CARROUSEL CSS */
+        .carousel-container {
+            position: relative;
+            margin: 15px -10px; /* Sort un peu pour le look mobile */
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 15px;
+            gap: 10px;
+        }
+
+        .carousel::-webkit-scrollbar { display: none; } /* Cache la barre de défilement */
+
+        .carousel-item {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 15px;
+            aspect-ratio: 4/5; /* Format portrait idéal pour mobile */
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Indicateurs (points) */
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #ccc;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .dot.active { background: var(--primary); width: 12px; border-radius: 10px; }
+
+        .price-tag { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 10px 0; display: block; }
+
+        .btn {
+            display: block; width: 100%; padding: 18px; text-align: center;
+            border-radius: 16px; font-weight: 700; font-size: 1.1rem;
+            text-decoration: none; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer; border: none;
+        }
+        .btn:active { transform: scale(0.96); }
+        .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 8px 20px rgba(230, 57, 70, 0.2); }
+        .btn-outline { background-color: transparent; border: 2px solid var(--secondary); color: var(--secondary); }
+
+        .transparency { text-align: center; padding: 20px; font-size: 0.9rem; color: #666; }
+        .impact-list { display: flex; justify-content: space-around; margin: 15px 0; }
+        .impact-item b { display: block; font-size: 1.1rem; color: var(--text); }
+
+        footer { text-align: center; padding: 30px 0; font-size: 0.8rem; opacity: 0.5; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.6s ease forwards; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="fade-in">
+        <div class="logo">🐾</div>
+        <h1>Un scan. Un don.<br>Une vie sauvée.</h1>
+        <p class="intro">En scannant ce sticker, vous avez le pouvoir d'offrir un repas ou un soin à un animal en détresse.</p>
+    </header>
+
+    <!-- Option Cadeau Bracelet (Mise en avant avec carrousel) -->
+    <div class="card gift-card fade-in">
+        <div class="badge">LE CADEAU SOLIDAIRE</div>
+        <p style="font-weight: 700; font-size: 1.2rem;">🎁 Bracelet Souvenir</p>
+        <span class="price-tag">Dès 15€ de don</span>
+        
+        <p><strong>Votre animal, gravé près de votre cœur.</strong></p>
+        
+        <!-- CARROUSEL D'IMAGES -->
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <!-- Image 1 : Porté (Main rose) -->
+                <div class="carousel-item"><img src="photo1.jpg" alt="Bracelet sur mesure"></div>
+                <!-- Image 2 : Packaging Mia -->
+                <div class="carousel-item"><img src="photo2.jpg" alt="Bracelet acier inoxydable"></div>
+                <!-- Image 3 : Porté Toffy -->
+                <div class="carousel-item"><img src="photo3.jpg" alt="Gravure personnalisée"></div>
+                <!-- Image 4 : Packaging Yako -->
+                <div class="carousel-item"><img src="photo4.jpg" alt="Cadeau amoureux des animaux"></div>
+                <!-- Image 5 : Packaging Roma -->
+                <div class="carousel-item"><img src="photo5.jpg" alt="Bracelet solidaire"></div>
+                <!-- Image 6 : Duo de bracelets Keivy -->
+                <div class="carousel-item"><img src="photo6.jpg" alt="Souvenir animal"></div>
+                <!-- Image 7 : Concept Smocky -->
+                <div class="carousel-item"><img src="photo7.jpg" alt="De la photo au bijou"></div>
+            </div>
+            <div class="dots" id="dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.9rem; margin-bottom: 20px; color: #555;">
+            Ce bijou unique en acier inoxydable est réalisé à partir de la photo de <b>votre compagnon</b>. Un souvenir éternel qui finance les soins vétérinaires.
+        </p>
+
+        <a href="VOTRE_LIEN_DON_15_EUROS" class="btn btn-primary">Soutenir et recevoir mon bracelet</a>
+    </div>
+
+    <!-- Option Don Libre -->
+    <div class="card fade-in" style="animation-delay: 0.2s;">
+        <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">❤️ Don Libre</p>
+        <p style="margin-bottom: 15px; font-size: 0.95rem;">Chaque euro compte pour remplir les gamelles et offrir des jouets.</p>
+        <a href="VOTRE_LIEN_DON_LIBRE" class="btn btn-outline">Offrir un repas (2€, 5€...)</a>
+    </div>
+
+    <div class="transparency fade-in" style="animation-delay: 0.4s;">
+        <h3>100% pour eux</h3>
+        <div class="impact-list">
+            <div class="impact-item"><b>5€</b> 3 repas</div>
+            <div class="impact-item"><b>15€</b> 1 vaccin</div>
+            <div class="impact-item"><b>50€</b> 1 secours</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aide Animale • Action immédiate via NFC</p>
+    </footer>
+</div>
+
+<script>
+    // Gestion des points du carrousel au défilement
+    const carousel = document.getElementById('carousel');
+    const dots = document.querySelectorAll('.dot');
+
+    carousel.addEventListener('scroll', () => {
+        const scrollIndex = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === scrollIndex);
+        });
+    });
+</script>
+
+</body>
+</html>
