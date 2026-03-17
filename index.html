@@ -13,130 +13,64 @@
 <style>
 
 body{
-font-family:'Nunito',sans-serif;
-margin:0;
-background:#fafafa;
-color:#333;
-font-size:15px;
-}
-
-/* HERO */
-
-.hero{
-text-align:center;
-background:white;
-padding:30px 15px;
-}
-
-.logo{
-width:90px;
-margin-bottom:10px;
-}
-
-.hero h1{
-font-size:26px;
-margin:8px 0;
-}
-
-.hero p{
-max-width:650px;
-margin:auto;
-color:#666;
-line-height:1.6;
-}
-
-/* PHOTOS */
-
-.gallery{
-margin-top:25px;
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:0 15px;
-}
-
-.gallery img{
-height:260px;
-border-radius:10px;
-}
-
-/* TEXT STORY */
-
-.story{
-max-width:700px;
-margin:40px auto;
-text-align:center;
-line-height:1.7;
-padding:0 15px;
-}
-
-/* PRODUCT */
-
-.product{
-text-align:center;
-background:white;
-padding:30px 20px;
-margin-top:30px;
-}
-
-.price{
-font-size:22px;
-font-weight:700;
-margin:10px 0;
-}
-
-button{
-border:none;
-padding:13px 24px;
-border-radius:8px;
-font-weight:700;
-font-size:14px;
-cursor:pointer;
-margin-top:15px;
-}
-
-.buy{
-background:#2d6cdf;
-color:white;
-}
-
-.pack{
-background:#28a745;
-color:white;
-transition:0.2s;
-}
-
-.pack:hover{
-background:#218838;
-transform:scale(1.03);
-body{
     font-family:'Nunito',sans-serif;
     margin:0;
     background:#111; /* fond noir */
-    color:#f0f0f0;   /* texte clair pour contraste */
+    color:#f0f0f0;   /* texte clair */
     font-size:15px;
 }
 
 /* HERO */
-
 .hero{
     text-align:center;
-    background:#111; /* fond noir */
+    background:#111;
     padding:30px 15px;
+}
+
+.logo{
+    width:90px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:26px;
+    margin:8px 0;
 }
 
 .hero p{
     max-width:650px;
     margin:auto;
-    color:#ddd;  /* texte clair */
+    color:#ddd;
     line-height:1.6;
 }
 
-/* PRODUCT */
+/* PHOTOS */
+.gallery{
+    margin-top:25px;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:0 15px;
+}
 
+.gallery img{
+    height:260px;
+    border-radius:10px;
+}
+
+/* TEXT STORY */
+.story{
+    max-width:700px;
+    margin:40px auto;
+    text-align:center;
+    line-height:1.7;
+    padding:0 15px;
+}
+
+/* PRODUCT */
 .product{
     text-align:center;
-    background:#1a1a1a; /* légèrement différent du fond pour démarquer */
+    background:#1a1a1a; /* légèrement plus clair pour contraste */
     padding:30px 20px;
     margin-top:30px;
 }
@@ -158,9 +92,9 @@ button{
     margin-top:15px;
 }
 
-/* Boutons déjà configurés pour ressortir */
+/* Boutons */
 .buy{
-    background:#2d6cdf; /* bleu pour le 15€ */
+    background:#2d6cdf; /* bleu pour 15€ */
     color:white;
 }
 
@@ -176,12 +110,19 @@ button{
 }
 
 /* IMPACT */
-
 .impact{
-    background:#1a1a1a; /* foncé mais légèrement différent */
+    background:#1a1a1a;
     text-align:center;
     padding:40px 20px;
     margin-top:30px;
+}
+
+.impact-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:20px;
 }
 
 .impact-item h3{
@@ -191,6 +132,17 @@ button{
 }
 
 /* REVIEWS */
+.reviews{
+    margin-top:30px;
+    overflow:hidden;
+    padding:0 15px;
+}
+
+.track{
+    display:flex;
+    gap:15px;
+    animation:scroll 35s linear infinite;
+}
 
 .review{
     background:#222;
@@ -202,8 +154,16 @@ button{
     color:#f0f0f0;
 }
 
-/* URGENCY */
+.stars{
+    color:#f5a623;
+}
 
+@keyframes scroll{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(-50%)}
+}
+
+/* URGENCY */
 .urgency{
     background:#3d0f0f;
     text-align:center;
@@ -214,7 +174,6 @@ button{
 }
 
 /* FOOTER */
-
 footer{
     text-align:center;
     padding:30px;
@@ -227,7 +186,6 @@ footer{
 </head>
 
 <body>
-
 
 <div class="hero">
 
@@ -248,18 +206,13 @@ Un petit objet… qui peut réellement changer la vie d’un chien.
 
 </div>
 
-
 <div class="gallery">
-
 <img src="Screenshot_20260317_020428_AliExpress.jpg">
 <img src="Screenshot_20260317_020617_AliExpress.jpg">
 <img src="AISelect_20260317_020524_AliExpress.jpg">
-
 </div>
 
-
 <div class="story">
-
 <p>
 Avec <b>15€</b>, vous permettez de financer environ <b>3 repas</b> pour un chien abandonné.
 </p>
@@ -271,9 +224,7 @@ Avec <b>30€</b>, vous contribuez à une <b>intervention vétérinaire essentie
 <p>
 <b>La couleur du bracelet sera choisie directement sur la page de paiement.</b>
 </p>
-  
 </div>
-
 
 <div class="product">
 
@@ -294,11 +245,10 @@ Pack 3 bracelets – 30€
 
 <button class="pack"
 onclick="window.location.href='https://buy.stripe.com/00wbJ36J28WH4O549f67S01'">
-Prendre le pack de 3 (frais de port offert)
+Prendre le pack de 3
 </button>
 
 </div>
-
 
 <div class="impact">
 
@@ -325,7 +275,6 @@ soins vétérinaires
 
 </div>
 
-
 <div class="reviews">
 
 <div class="track">
@@ -341,18 +290,14 @@ soins vétérinaires
 
 </div>
 
-
 <div class="urgency">
 
-Plus que 58 bracelets disponibles pour financer les soins ce mois-ci
+Plus que 214 bracelets disponibles pour financer les soins ce mois-ci
 
 </div>
 
-
 <footer>
-
 © 2026 Rescue Dogs Project
-
 </footer>
 
 </body>
