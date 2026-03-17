@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bracelet Solidaire – Aidez les chiens abandonnés</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
 <style>
 
 body{
@@ -20,6 +29,7 @@ padding:15px;
 text-align:center;
 background:white;
 padding:25px 15px;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -29,18 +39,16 @@ margin-bottom:10px;
 
 .hero h1{
 font-size:26px;
-margin-bottom:8px;
+margin:5px 0;
 }
 
 .hero p{
-color:#666;
 max-width:620px;
 margin:auto;
-line-height:1.5;
 font-size:14px;
+color:#666;
+line-height:1.5;
 }
-
-/* SOCIAL PROOF */
 
 .trust{
 display:flex;
@@ -48,6 +56,7 @@ justify-content:center;
 gap:25px;
 margin-top:15px;
 font-size:13px;
+color:#555;
 }
 
 /* PRODUCT */
@@ -102,7 +111,12 @@ background:#111;
 color:white;
 }
 
-/* COLOR SELECTOR */
+button:disabled{
+opacity:0.4;
+cursor:not-allowed;
+}
+
+/* COLORS */
 
 .colors{
 margin-top:15px;
@@ -127,30 +141,32 @@ border:3px solid black;
 .blue{background:#2d6cdf;}
 .green{background:#38b96b;}
 
+.cart{
+margin-top:10px;
+font-size:13px;
+color:#444;
+}
+
 /* IMPACT */
 
 .impact{
 background:white;
-padding:40px 15px;
+padding:35px 15px;
 text-align:center;
 margin-top:30px;
 }
 
-.impact h2{
-font-size:22px;
-}
-
 .impact-box{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
 gap:25px;
+flex-wrap:wrap;
 margin-top:20px;
 }
 
 .impact-item h3{
+margin:0;
 font-size:20px;
-margin-bottom:5px;
 }
 
 /* REVIEWS */
@@ -177,7 +193,6 @@ font-size:13px;
 
 .stars{
 color:#f5a623;
-margin-bottom:4px;
 }
 
 @keyframes scroll{
@@ -190,11 +205,25 @@ margin-bottom:4px;
 .urgency{
 background:#fff5f5;
 text-align:center;
-padding:25px 15px;
+padding:20px;
 margin-top:30px;
 font-weight:700;
 color:#c62828;
 font-size:14px;
+}
+
+/* POPUP SALES */
+
+.sale-popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:12px 16px;
+border-radius:8px;
+box-shadow:0 3px 12px rgba(0,0,0,0.15);
+font-size:13px;
+display:none;
 }
 
 /* FOOTER */
@@ -202,8 +231,205 @@ font-size:14px;
 footer{
 text-align:center;
 padding:30px;
-color:#777;
 font-size:12px;
+color:#777;
 }
 
 </style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="1773582841556.png" class="logo">
+
+<h1>Un bracelet peut sauver la vie d’un chien</h1>
+
+<p>
+Chaque bracelet acheté aide à nourrir et soigner des chiens abandonnés.
+Les bénéfices financent repas, médicaments et opérations vétérinaires.
+</p>
+
+<div class="trust">
+<div>⭐ 4.9 / 5</div>
+<div>234 avis</div>
+<div>Paiement sécurisé</div>
+</div>
+
+</div>
+
+
+<div class="container">
+
+<div class="product">
+
+<div class="gallery">
+<img src="Screenshot_20260317_020428_AliExpress.jpg">
+<img src="Screenshot_20260317_020554_AliExpress.jpg">
+<img src="Screenshot_20260317_020617_AliExpress.jpg">
+<img src="AISelect_20260317_020524_AliExpress.jpg">
+</div>
+
+<div class="product-info">
+
+<div class="price">
+15€ – Bracelet solidaire<br><br>
+30€ – Pack 3 bracelets
+</div>
+
+<p>
+✔ 15€ financent environ <b>3 repas</b> pour un chien abandonné.<br>
+✔ 30€ peuvent contribuer à <b>une opération vétérinaire</b>.
+</p>
+
+<div class="colors">
+
+<b>Choisissez la couleur :</b><br><br>
+
+<div class="color white" data-color="blanc"></div>
+<div class="color black" data-color="noir"></div>
+<div class="color blue" data-color="bleu"></div>
+<div class="color green" data-color="vert"></div>
+
+</div>
+
+<button id="buy1" class="buy" disabled>
+Acheter 1 bracelet
+</button>
+
+<button id="buy3" class="pack" disabled>
+Ajouter au pack de 3
+</button>
+
+<div class="cart" id="cart"></div>
+
+</div>
+</div>
+</div>
+
+
+<div class="impact">
+
+<h2>Votre impact</h2>
+
+<div class="impact-box">
+
+<div class="impact-item">
+<h3 id="repas">12482</h3>
+repas financés
+</div>
+
+<div class="impact-item">
+<h3>1432</h3>
+chiens aidés
+</div>
+
+<div class="impact-item">
+<h3>327</h3>
+soins vétérinaires
+</div>
+
+</div>
+
+</div>
+
+
+<div class="container">
+
+<h2 style="text-align:center">Avis clients</h2>
+
+<div class="reviews">
+
+<div class="track">
+
+<div class="review"><div class="stars">★★★★★</div>Très beau bracelet</div>
+<div class="review"><div class="stars">★★★★★</div>Belle cause</div>
+<div class="review"><div class="stars">★★★★★</div>Je recommande</div>
+<div class="review"><div class="stars">★★★★★</div>Qualité top</div>
+<div class="review"><div class="stars">★★★★★</div>Super initiative</div>
+<div class="review"><div class="stars">★★★★★</div>J’en ai offert 3</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="urgency">
+Plus que 214 bracelets disponibles pour financer les soins ce mois-ci
+</div>
+
+
+<div class="sale-popup" id="popup"></div>
+
+<footer>
+© 2026 Rescue Dogs Project
+</footer>
+
+
+<script>
+
+/* COLOR SELECTION */
+
+let selectedColor=null
+let cart=[]
+const colors=document.querySelectorAll(".color")
+const buy1=document.getElementById("buy1")
+const buy3=document.getElementById("buy3")
+const cartBox=document.getElementById("cart")
+
+colors.forEach(c=>{
+c.onclick=()=>{
+colors.forEach(x=>x.classList.remove("selected"))
+c.classList.add("selected")
+selectedColor=c.dataset.color
+buy1.disabled=false
+buy3.disabled=false
+}
+})
+
+buy1.onclick=()=>{
+if(!selectedColor) return
+window.location.href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01"
+}
+
+buy3.onclick=()=>{
+if(cart.length>=3) return
+cart.push(selectedColor)
+cartBox.innerHTML="Panier : "+cart.join(", ")
+
+if(cart.length==3){
+window.location.href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01"
+}
+}
+
+/* FAKE LIVE SALES POPUP */
+
+const names=["Lucas","Emma","Noah","Chloé","Louis","Sofia","Tom","Anna"]
+const cities=["Paris","Bruxelles","Lyon","Marseille","Toulouse","Nice"]
+
+function popupSale(){
+
+const name=names[Math.floor(Math.random()*names.length)]
+const city=cities[Math.floor(Math.random()*cities.length)]
+
+const popup=document.getElementById("popup")
+
+popup.innerHTML=name+" de "+city+" vient d'acheter un bracelet"
+
+popup.style.display="block"
+
+setTimeout(()=>{
+popup.style.display="none"
+},4000)
+
+}
+
+setInterval(popupSale,9000)
+
+</script>
+
+</body>
+</html>
