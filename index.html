@@ -3,307 +3,343 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Animal Rescue | Sauver une vie</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<title>Bracelet Solidaire - Sauvez les Chiens</title>
 
 <style>
 
-:root{
---orange:#ff7a45;
---dark:#0f0f0f;
---card:#1a1a1a;
---text:#eaeaea;
---soft:#2a2a2a;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:'Inter',sans-serif;
-background:var(--dark);
-color:var(--text);
-line-height:1.6;
-padding:25px;
+font-family: Arial, sans-serif;
+margin:0;
+background:#fafafa;
+color:#222;
 }
-
-.container{
-max-width:520px;
-margin:auto;
-}
-
-/* HEADER */
 
 header{
 text-align:center;
-margin-bottom:40px;
-}
-
-.logo{
-width:160px;
-margin-bottom:20px;
+padding:40px 20px;
+background:white;
 }
 
 h1{
-font-family:'Fredoka',sans-serif;
-font-size:34px;
-color:var(--orange);
+font-size:32px;
 margin-bottom:10px;
 }
 
-.subtitle{
-color:#aaa;
-font-size:16px;
-max-width:85%;
+.sub{
+color:#666;
+max-width:700px;
 margin:auto;
+line-height:1.5;
 }
 
-/* CARDS */
-
-.card{
-background:var(--card);
-border-radius:25px;
-padding:25px;
-margin-bottom:30px;
-border:1px solid #2c2c2c;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
-/* IMAGE */
-
-.hero img{
-width:100%;
-border-radius:18px;
-margin-bottom:18px;
-}
-
-/* SLIDER */
-
-.slider-container{
+.gallery{
 display:flex;
 gap:15px;
 overflow-x:auto;
-scroll-snap-type:x mandatory;
+padding:20px 0;
 }
 
-.slider-container::-webkit-scrollbar{
-display:none;
+.gallery img{
+height:260px;
+border-radius:12px;
 }
 
-.slider-item{
-min-width:85%;
-scroll-snap-align:center;
+.product{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
 }
 
-/* IMPACT GRID */
-
-.impact{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin-top:20px;
+.product-info{
+flex:1;
 }
 
-.impact div{
-text-align:center;
-padding:16px;
-border-radius:16px;
-background:#111;
-border:1px solid #333;
+.price{
+font-size:28px;
+font-weight:bold;
+margin:20px 0;
 }
-
-.impact b{
-display:block;
-font-size:20px;
-color:var(--orange);
-}
-
-.impact span{
-font-size:11px;
-color:#aaa;
-}
-
-/* BOUTONS */
 
 .btn{
-display:block;
-text-align:center;
-padding:18px;
-border-radius:18px;
-font-weight:700;
-text-decoration:none;
-margin-top:15px;
-}
-
-.primary{
-background:var(--orange);
+display:inline-block;
+background:#1a73e8;
 color:white;
-font-size:18px;
-box-shadow:0 8px 20px rgba(255,122,69,0.4);
+padding:14px 26px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:10px;
 }
 
-.secondary{
-border:2px solid var(--orange);
-color:var(--orange);
-background:transparent;
-}
-
-/* STORY */
-
-.story p{
-margin-bottom:15px;
-font-size:15px;
-}
-
-.story b{
-color:var(--orange);
-}
-
-/* NOTE */
-
-.note{
-font-size:13px;
-color:#bbb;
-margin-top:15px;
-text-align:center;
+.btn.secondary{
 background:#111;
-padding:12px;
-border-radius:10px;
-border:1px solid #2a2a2a;
 }
 
-/* TESTIMONIAL */
-
-.testimonial{
-background:#111;
-border-radius:18px;
-padding:18px;
-border:1px solid #333;
-font-size:14px;
-}
-
-.testimonial b{
-color:var(--orange);
-}
-
-/* FOOTER */
-
-.secure{
-text-align:center;
-font-size:12px;
-color:#777;
+.colors{
 margin-top:25px;
+}
+
+.color{
+width:26px;
+height:26px;
+border-radius:50%;
+display:inline-block;
+margin-right:10px;
+cursor:pointer;
+border:2px solid #ddd;
+}
+
+.white{background:white;}
+.black{background:black;}
+.blue{background:#2d6cdf;}
+.green{background:#3ab96b;}
+
+.section{
+padding:60px 20px;
+background:white;
+margin-top:40px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.story{
+max-width:800px;
+margin:auto;
+text-align:center;
+line-height:1.6;
+color:#444;
+}
+
+.reviews{
+margin-top:30px;
+overflow:hidden;
+position:relative;
+}
+
+.review-track{
+display:flex;
+gap:20px;
+animation:scroll 30s linear infinite;
+}
+
+.review{
+background:#fff;
+border-radius:10px;
+padding:20px;
+min-width:260px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stars{
+color:#f5a623;
+margin-bottom:5px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 footer{
 text-align:center;
-font-size:12px;
-color:#666;
-margin-top:35px;
+padding:40px 20px;
+color:#777;
+font-size:14px;
+}
+
+.secure{
+margin-top:15px;
+color:#4caf50;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
-
 <header>
 
-<img src="1773582841556.png" class="logo">
+<h1>Un bracelet. Une vie sauvée.</h1>
 
-<h1>Donner une chance à ceux qui n’en ont pas eu</h1>
-
-<p class="subtitle">
-Chaque don peut sauver une vie.
+<p class="sub">
+Chaque bracelet acheté aide directement des chiens abandonnés ou malades.  
+Nos partenaires vétérinaires utilisent les fonds pour nourrir, soigner et sauver ceux qui en ont le plus besoin.
 </p>
 
 </header>
 
 
-<section class="card hero">
+<div class="container">
 
-<div class="slider-container">
+<div class="product">
 
-<div class="slider-item">
-<img src="-1106250143-76688371.jpg">
+<div class="gallery">
+
+<img src="Screenshot_20260317_020428_AliExpress.jpg">
+<img src="Screenshot_20260317_020554_AliExpress.jpg">
+<img src="Screenshot_20260317_020617_AliExpress.jpg">
+<img src="AISelect_20260317_020524_AliExpress.jpg">
+
 </div>
 
-</div>
+<div class="product-info">
 
-<p style="text-align:center;margin-top:10px">
+<h2>Bracelet Solidaire</h2>
 
-En faisant un don de <b>15€ ou plus</b>, vous sauvez un animal et recevez ce bracelet souvenir personnalisable.
-
+<p>
+Un bracelet minimaliste et élégant qui représente quelque chose de bien plus grand.  
+Chaque commande contribue directement à sauver des chiens abandonnés.
 </p>
 
-<a href="https://buy.stripe.com/cNicN76J20qb6Wd0X367S02" class="btn primary">
-Sauver un animal & recevoir mon bracelet personnalisé 
+<div class="price">
+
+15€ – 1 bracelet  
+<br><br>
+
+30€ – 3 bracelets
+
+</div>
+
+<p>
+✔ 15€ financent <b>3 repas complets</b> pour un chien abandonné  
+<br>
+✔ 30€ peuvent contribuer à <b>une opération vétérinaire vitale</b>
+</p>
+
+
+<a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn">
+Acheter maintenant
 </a>
 
-<p class="note">
-Après votre paiement, ne quittez pas la page : vous serez redirigé vers le formulaire pour envoyer la photo de votre animal.
-</p>
+<br>
 
-</section>
+<a href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01" class="btn secondary">
+Pack 3 bracelets
+</a>
 
 
-<section class="card story">
+<div class="colors">
 
-<p><b>Un combat du cœur.</b></p>
+<p>Choisir la couleur :</p>
 
-<p>
-Animal Rescue est né d’une réalité simple : trop d’animaux sont abandonnés, blessés ou oubliés.
-</p>
+<span class="color white"></span>
+<span class="color black"></span>
+<span class="color blue"></span>
+<span class="color green"></span>
 
-<p>
-Derrière ce projet, il n’y a pas de grande organisation — seulement une personne déterminée à leur offrir une seconde chance.
-</p>
-
-<div class="impact">
-
-<div>
-<b>5€</b>
-<span>Un repas</span>
 </div>
 
-<div>
-<b>15€</b>
-<span>Un vaccin</span>
-</div>
-
-<div>
-<b>50€</b>
-<span>Une opération</span>
 </div>
 
 </div>
 
-</section>
+</div>
 
 
-<section class="card testimonial">
 
-<b>"Grâce aux dons, Luna a pu être soignée et trouver une famille."</b>
+<div class="section">
 
-<p style="margin-top:10px">
-Chaque geste compte.
+<h2>Pourquoi ce bracelet existe</h2>
+
+<p class="story">
+
+Chaque année, des milliers de chiens sont abandonnés.  
+Certains sont blessés. Certains sont malades.  
+Beaucoup n'ont simplement plus personne.
+
+Nous travaillons avec des refuges et des vétérinaires qui consacrent leur vie à les sauver.
+
+Mais soigner un chien coûte cher.  
+Parfois une simple opération peut décider de sa survie.
+
+Ce bracelet est devenu une façon simple pour des milliers de personnes de participer.
+
+Un petit objet.  
+Un grand impact.
+
 </p>
 
-</section>
+</div>
 
 
-<section class="card">
 
-<p style="text-align:center;font-weight:600;margin-bottom:10px">
+<div class="section">
 
-Vous souhaitez simplement soutenir l’action ?
+<h2>Noté 4.9 / 5 ⭐ par 234 clients</h2>
+
+<div class="reviews">
+
+<div class="review-track">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Très beau bracelet et surtout pour une belle cause.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Livraison rapide et qualité top.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+J’en ai pris 3 pour offrir. Super idée.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Savoir que ça aide les chiens rend l'achat encore mieux.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Simple mais très élégant.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Je recommande à 100%.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Belle initiative. Je rachèterai.
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+Produit fidèle aux photos.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="section">
+
+<h2>Soutenir simplement l'action</h2>
+
+<p class="story">
+
+Si vous souhaitez simplement soutenir la cause sans acheter de bracelet,
+vous pouvez faire un petit don libre.
+
+Chaque euro aide directement les chiens en refuge.
 
 </p>
 
@@ -311,18 +347,19 @@ Vous souhaitez simplement soutenir l’action ?
 Faire un don libre
 </a>
 
-</section>
-
-
 <div class="secure">
 Paiement sécurisé
 </div>
 
+</div>
+
+
 <footer>
-© 2024 Animal Rescue
+
+© 2026 Rescue Dogs Project
+
 </footer>
 
-</div>
 
 </body>
 </html>
