@@ -85,29 +85,6 @@ font-weight:700;
 margin:10px 0;
 }
 
-.colors{
-margin-top:15px;
-}
-
-.color{
-width:28px;
-height:28px;
-border-radius:50%;
-display:inline-block;
-margin:6px;
-border:2px solid #ddd;
-cursor:pointer;
-}
-
-.color.selected{
-border:3px solid black;
-}
-
-.white{background:white;}
-.black{background:black;}
-.blue{background:#2d6cdf;}
-.green{background:#38b96b;}
-
 button{
 border:none;
 padding:13px 24px;
@@ -126,11 +103,6 @@ color:white;
 .pack{
 background:#111;
 color:white;
-}
-
-button:disabled{
-opacity:0.4;
-cursor:not-allowed;
 }
 
 /* IMPACT */
@@ -247,7 +219,7 @@ Avec <b>15€</b>, vous permettez de financer environ <b>3 repas</b> pour un chi
 
 Avec <b>30€</b>, cela peut contribuer à une <b>intervention vétérinaire essentielle</b> pour sauver un animal blessé ou malade.
 
-Chaque bracelet acheté soutient directement ces actions.
+<b>La couleur du bracelet sera choisie directement sur la page de paiement.</b>
 
 </div>
 
@@ -258,20 +230,8 @@ Chaque bracelet acheté soutient directement ces actions.
 Bracelet solidaire – 15€
 </div>
 
-<p><b>Choisissez la couleur :</b></p>
-
-<div class="colors">
-
-<div class="color white" data-color="blanc"></div>
-<div class="color black" data-color="noir"></div>
-<div class="color blue" data-color="bleu"></div>
-<div class="color green" data-color="vert"></div>
-
-</div>
-
-<br>
-
-<button id="buy1" class="buy" disabled>
+<button class="buy"
+onclick="window.location.href='https://buy.stripe.com/cNicN76J20qb6Wd0X367S02'">
 Acheter le bracelet
 </button>
 
@@ -343,39 +303,6 @@ Plus que 214 bracelets disponibles pour financer les soins ce mois-ci
 © 2026 Rescue Dogs Project
 
 </footer>
-
-
-<script>
-
-let selectedColor=null
-const colors=document.querySelectorAll(".color")
-const buyBtn=document.getElementById("buy1")
-
-colors.forEach(c=>{
-
-c.onclick=()=>{
-
-colors.forEach(x=>x.classList.remove("selected"))
-
-c.classList.add("selected")
-
-selectedColor=c.dataset.color
-
-buyBtn.disabled=false
-
-}
-
-})
-
-buyBtn.onclick=()=>{
-
-if(!selectedColor)return
-
-window.location.href="https://buy.stripe.com/00wbJ36J28WH4O549f67S01"
-
-}
-
-</script>
 
 </body>
 </html>
