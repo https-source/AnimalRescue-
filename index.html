@@ -109,78 +109,117 @@ transition:0.2s;
 .pack:hover{
 background:#218838;
 transform:scale(1.03);
+body{
+    font-family:'Nunito',sans-serif;
+    margin:0;
+    background:#111; /* fond noir */
+    color:#f0f0f0;   /* texte clair pour contraste */
+    font-size:15px;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    background:#111; /* fond noir */
+    padding:30px 15px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#ddd;  /* texte clair */
+    line-height:1.6;
+}
+
+/* PRODUCT */
+
+.product{
+    text-align:center;
+    background:#1a1a1a; /* légèrement différent du fond pour démarquer */
+    padding:30px 20px;
+    margin-top:30px;
+}
+
+.price{
+    font-size:22px;
+    font-weight:700;
+    margin:10px 0;
+    color:#fff;
+}
+
+button{
+    border:none;
+    padding:13px 24px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+/* Boutons déjà configurés pour ressortir */
+.buy{
+    background:#2d6cdf; /* bleu pour le 15€ */
+    color:white;
+}
+
+.pack{
+    background:#28a745; /* vert pour le pack 3 */
+    color:white;
+    transition:0.2s;
+}
+
+.pack:hover{
+    background:#218838;
+    transform:scale(1.03);
 }
 
 /* IMPACT */
 
 .impact{
-background:white;
-text-align:center;
-padding:40px 20px;
-margin-top:30px;
-}
-
-.impact-box{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-margin-top:20px;
+    background:#1a1a1a; /* foncé mais légèrement différent */
+    text-align:center;
+    padding:40px 20px;
+    margin-top:30px;
 }
 
 .impact-item h3{
-margin:0;
-font-size:20px;
+    margin:0;
+    font-size:20px;
+    color:#fff;
 }
 
 /* REVIEWS */
 
-.reviews{
-margin-top:30px;
-overflow:hidden;
-padding:0 15px;
-}
-
-.track{
-display:flex;
-gap:15px;
-animation:scroll 35s linear infinite;
-}
-
 .review{
-background:white;
-padding:15px;
-border-radius:8px;
-min-width:210px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-font-size:13px;
-}
-
-.stars{
-color:#f5a623;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+    background:#222;
+    padding:15px;
+    border-radius:8px;
+    min-width:210px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.5);
+    font-size:13px;
+    color:#f0f0f0;
 }
 
 /* URGENCY */
 
 .urgency{
-background:#fff5f5;
-text-align:center;
-padding:25px;
-margin-top:30px;
-font-weight:700;
-color:#c62828;
+    background:#3d0f0f;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+    font-weight:700;
+    color:#ff6b6b;
 }
 
+/* FOOTER */
+
 footer{
-text-align:center;
-padding:30px;
-font-size:12px;
-color:#777;
+    text-align:center;
+    padding:30px;
+    font-size:12px;
+    color:#aaa;
 }
 
 </style>
