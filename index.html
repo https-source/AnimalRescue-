@@ -1,307 +1,384 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    
-<script data-goatcounter="https://jeromelees.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<meta charset="UTF-8">
-    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série Pro — Chargeur Ultra Rapide 20W</title>
+    <style>
+        :root {
+            --bg-color: #fbfbfd;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-sub: #86868b;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --tag-bg: #f5f5f7;
+            --border-color: #d2d2d7;
+            --strike-color: #a1a1a6;
+        }
 
-<title>Bracelet Solidaire</title>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.47059;
+            font-weight: 400;
+            letter-spacing: -.022em;
+        }
 
-<style>
+        /* En-tête */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            padding: 16px 24px;
+            text-align: center;
+        }
 
-body{
-    font-family:'Nunito',sans-serif;
-    margin:0;
-    background:#111; /* fond noir */
-    color:#f0f0f0;   /* texte clair */
-    font-size:15px;
-}
+        .brand-logo {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--text-main);
+        }
 
-/* HERO */
-.hero{
-    text-align:center;
-    background:#111;
-    padding:30px 15px;
-}
+        /* Bannière Déstockage */
+        .promo-banner {
+            background-color: #111111;
+            color: #f5f5f7;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
 
-.logo{
-    width:90px;
-    margin-bottom:10px;
-}
+        .promo-banner strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
 
-.hero h1{
-    font-size:26px;
-    margin:8px 0;
-}
+        /* Layout Principal */
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
 
-.hero p{
-    max-width:650px;
-    margin:auto;
-    color:#ddd;
-    line-height:1.6;
-}
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
 
-/* PHOTOS */
-.gallery{
-    margin-top:25px;
-    display:flex;
-    gap:10px;
-    overflow-x:auto;
-    padding:0 15px;
-}
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+            }
+        }
 
-.gallery img{
-    height:260px;
-    border-radius:10px;
-}
+        /* Galerie d'images */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
 
-/* TEXT STORY */
-.story{
-    max-width:700px;
-    margin:40px auto;
-    text-align:center;
-    line-height:1.7;
-    padding:0 15px;
-}
+        .main-image-box {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
 
-/* PRODUCT */
-.product{
-    text-align:center;
-    background:#1a1a1a; /* légèrement plus clair pour contraste */
-    padding:30px 20px;
-    margin-top:30px;
-}
+        .main-image-box img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+        }
 
-.price{
-    font-size:22px;
-    font-weight:700;
-    margin:10px 0;
-    color:#fff;
-}
+        /* Fiche Produit */
+        .product-details {
+            display: flex;
+            flex-direction: column;
+        }
 
-button{
-    border:none;
-    padding:13px 24px;
-    border-radius:8px;
-    font-weight:700;
-    font-size:14px;
-    cursor:pointer;
-    margin-top:15px;
-}
+        .category-tag {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+        }
 
-/* Boutons */
-.buy{
-    background:#2d6cdf; /* bleu pour 15€ */
-    color:white;
-}
+        h1 {
+            font-size: 36px;
+            line-height: 1.1;
+            font-weight: 600;
+            letter-spacing: -0.005em;
+            margin-bottom: 12px;
+        }
 
-.pack{
-    background:#28a745; /* vert pour le pack 3 */
-    color:white;
-    transition:0.2s;
-}
+        .subtitle {
+            font-size: 17px;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
 
-.pack:hover{
-    background:#218838;
-    transform:scale(1.03);
-}
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-/* IMPACT */
-.impact{
-    background:#1a1a1a;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:30px;
-}
+        .current-price {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
 
-.impact-box{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    margin-top:20px;
-}
+        .original-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: var(--strike-color);
+            font-weight: 400;
+        }
 
-.impact-item h3{
-    margin:0;
-    font-size:20px;
-    color:#fff;
-}
+        .badge-discount {
+            background-color: #e30000;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
 
-/* REVIEWS */
-.reviews{
-    margin-top:30px;
-    overflow:hidden;
-    padding:0 15px;
-}
+        /* Option Connecteur */
+        .selector-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
 
-.track{
-    display:flex;
-    gap:15px;
-    animation:scroll 35s linear infinite;
-}
+        .connector-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
 
-.review{
-    background:#222;
-    padding:15px;
-    border-radius:8px;
-    min-width:210px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.5);
-    font-size:13px;
-    color:#f0f0f0;
-}
+        .option-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--card-bg);
+        }
 
-.stars{
-    color:#f5a623;
-}
+        .option-card:hover {
+            border-color: #86868b;
+        }
 
-@keyframes scroll{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(-50%)}
-}
+        .option-card.active {
+            border: 2px solid var(--accent);
+            padding: 15px;
+        }
 
-/* URGENCY */
-.urgency{
-    background:#3d0f0f;
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
-    font-weight:700;
-    color:#ff6b6b;
-}
+        .option-title {
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    font-size:12px;
-    color:#aaa;
-}
+        .option-desc {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
 
-</style>
+        /* Offre automatique 2 achetés */
+        .bundle-offer {
+            background-color: #f2f8ff;
+            border: 1px solid #cce4ff;
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            color: #004085;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .bundle-offer span {
+            font-weight: 600;
+        }
+
+        /* Bouton d'action */
+        .btn-buy {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 18px 32px;
+            border-radius: 980px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Garanties */
+        .reassurance-list {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .reassurance-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .reassurance-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: var(--text-sub);
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="hero">
+    <div class="promo-banner">
+        <strong>Déstockage exceptionnel :</strong> Stock limité d'origine constructeur liquidation à -66%
+    </div>
 
-<img src="1773582841556.png" class="logo">
+    <header>
+        <div class="brand-logo">Cadeau Malin</div>
+    </header>
 
-<h1>Un bracelet peut sauver la vie d’un chien</h1>
+    <main>
+        <div class="product-grid">
+            
+            <!-- Galerie Photo minimaliste -->
+            <div class="gallery-container">
+                <div class="main-image-box">
+                    <img id="product-image" src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80" alt="Chargeur Rapide 20W">
+                </div>
+            </div>
 
-<p>
-Chaque année, des milliers de chiens sont abandonnés.  
-Certains arrivent dans les refuges affamés, blessés ou malades.
+            <!-- Informations Produit -->
+            <div class="product-details">
+                <span class="category-tag">Accessoire d'Origine • Déstockage</span>
+                <h1>Chargeur Rapide 20W + Câble</h1>
+                <p class="subtitle">Recharge haute vitesse certifiée. Design compact et finitions haute résistance.</p>
 
-Des vétérinaires et bénévoles se battent chaque jour pour leur donner une seconde chance.  
-Mais nourrir et soigner ces animaux coûte cher.
+                <div class="price-box">
+                    <span class="current-price">20,00 €</span>
+                    <span class="original-price">59,99 €</span>
+                    <span class="badge-discount">-66%</span>
+                </div>
 
-Ce bracelet est devenu une manière simple de participer.  
-Un petit objet… qui peut réellement changer la vie d’un chien.
-</p>
+                <!-- Choix du connecteur -->
+                <div class="selector-title">Choisissez le type de connecteur :</div>
+                <div class="connector-selector">
+                    <div class="option-card active" onclick="selectConnector(this, 'lightning')">
+                        <span class="option-title">Lightning</span>
+                        <span class="option-desc">iPhone 8 à 14</span>
+                    </div>
+                    <div class="option-card" onclick="selectConnector(this, 'usbc')">
+                        <span class="option-title">USB-C</span>
+                        <span class="option-desc">iPhone 15/16 & iPad</span>
+                    </div>
+                </div>
 
-</div>
+                <!-- Offre Duo -->
+                <div class="bundle-offer">
+                    <div>💡 <span>Offre automatique :</span> -15% de réduction supplémentaire appliqués pour l'achat de 2 unités ou plus.</div>
+                </div>
 
-<div class="gallery">
-<img src="Screenshot_20260317_020428_AliExpress.jpg">
-<img src="Screenshot_20260317_020617_AliExpress.jpg">
-<img src="AISelect_20260317_020524_AliExpress.jpg">
-</div>
+                <!-- Bouton d'achat Stripe -->
+                <button class="btn-buy" id="checkout-button">Acheter maintenant</button>
 
-<div class="story">
-<p>
-Avec <b>15€</b>, vous permettez de financer environ <b>3 repas</b> pour un chien abandonné.
-</p>
+                <!-- Éléments de rassurance -->
+                <div class="reassurance-list">
+                    <div class="reassurance-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        Expédition sous 24h avec numéro de suivi.
+                    </div>
+                    <div class="reassurance-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        Paiement 100% sécurisé via Stripe.
+                    </div>
+                </div>
 
-<p>
-Avec <b>30€</b>, vous contribuez à une <b>intervention vétérinaire essentielle</b> qui peut sauver un chien blessé ou gravement malade.
-</p>
+            </div>
+        </div>
+    </main>
 
-<p>
-<b>La couleur du bracelet sera choisie directement sur la page de paiement.</b>
-</p>
-</div>
+    <footer>
+        &copy; 2026 Cadeau Malin — Tous droits réservés. Offre de déstockage dans la limite des stocks disponibles.
+    </footer>
 
-<div class="product">
+    <script>
+        function selectConnector(element, type) {
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
 
-<div class="price">
-Bracelet solidaire – 15€
-</div>
-
-<button class="buy"
-onclick="window.location.href='https://buy.stripe.com/cNicN76J20qb6Wd0X367S02'">
-Acheter le bracelet
-</button>
-
-<br><br>
-
-<div class="price">
-Pack 3 bracelets – 30€
-</div>
-
-<button class="pack"
-onclick="window.location.href='https://buy.stripe.com/00wbJ36J28WH4O549f67S01'">
-Prendre le pack de 3
-</button>
-
-</div>
-
-<div class="impact">
-
-<h2>Votre impact</h2>
-
-<div class="impact-box">
-
-<div class="impact-item">
-<h3>12 482</h3>
-repas financés
-</div>
-
-<div class="impact-item">
-<h3>1 432</h3>
-chiens aidés
-</div>
-
-<div class="impact-item">
-<h3>327</h3>
-soins vétérinaires
-</div>
-
-</div>
-
-</div>
-
-<div class="reviews">
-
-<div class="track">
-
-<div class="review"><div class="stars">★★★★★</div>Très beau bracelet</div>
-<div class="review"><div class="stars">★★★★★</div>Belle cause</div>
-<div class="review"><div class="stars">★★★★★</div>Je recommande</div>
-<div class="review"><div class="stars">★★★★★</div>Super qualité</div>
-<div class="review"><div class="stars">★★★★★</div>Très touchant</div>
-<div class="review"><div class="stars">★★★★★</div>J’en ai offert 3</div>
-
-</div>
-
-</div>
-
-<div class="urgency">
-
-Plus que 214 bracelets disponibles pour financer les soins ce mois-ci
-
-</div>
-
-<footer>
-© 2026 Rescue Dogs Project
-</footer>
-
+        // Intégration du bouton Stripe
+        document.getElementById('checkout-button').addEventListener('click', function () {
+            // Insérez ici le lien de paiement Stripe direct (Stripe Payment Link)
+            window.location.href = "https://buy.stripe.com/VOTRE_LIEN_STRIPE";
+        });
+    </script>
 </body>
 </html>
