@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Série Pro — Chargeur Ultra Rapide 35W</title>
+    <title>LIQUIDATION OFFICIELLE — Chargeur Ultra Rapide 35W</title>
     <style>
         :root {
             --bg-color: #fbfbfd;
@@ -15,6 +15,7 @@
             --tag-bg: #f5f5f7;
             --border-color: #d2d2d7;
             --strike-color: #a1a1a6;
+            --alert-red: #e30000;
         }
 
         * {
@@ -33,9 +34,30 @@
             letter-spacing: -.022em;
         }
 
-        /* En-tête */
+        /* Bannière Déstockage Urgence */
+        .promo-banner {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid var(--alert-red);
+        }
+
+        .promo-banner span.highlight {
+            background-color: var(--alert-red);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        /* En-tête Vendeur */
         header {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             position: sticky;
@@ -47,50 +69,39 @@
         }
 
         .brand-logo {
-            font-size: 19px;
-            font-weight: 600;
-            letter-spacing: -0.015em;
-            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #1d1d1f;
+            text-transform: uppercase;
         }
 
-        /* Bannière Déstockage */
-        .promo-banner {
-            background-color: #111111;
-            color: #f5f5f7;
-            text-align: center;
-            padding: 10px 16px;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        .promo-banner strong {
-            color: #ffffff;
-            font-weight: 600;
+        .brand-logo span {
+            color: var(--alert-red);
         }
 
         /* Layout Principal */
         main {
             max-width: 980px;
             margin: 0 auto;
-            padding: 40px 20px 80px;
+            padding: 30px 20px 80px;
         }
 
         .product-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 30px;
         }
 
         @media (min-width: 768px) {
             .product-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 60px;
+                gap: 50px;
                 align-items: center;
             }
         }
 
-        /* Galerie d'images Studio */
+        /* Photo du Produit */
         .gallery-container {
             display: flex;
             flex-direction: column;
@@ -102,18 +113,34 @@
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.08);
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .main-image-box img {
             width: 100%;
-            max-width: 360px;
+            max-width: 380px;
             height: auto;
             object-fit: contain;
+        }
+
+        .stock-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #fff0f0;
+            color: var(--alert-red);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #ffcccc;
+            text-transform: uppercase;
         }
 
         /* Fiche Produit */
@@ -124,25 +151,25 @@
 
         .category-tag {
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: var(--text-sub);
-            margin-bottom: 8px;
+            color: var(--alert-red);
+            margin-bottom: 6px;
         }
 
         h1 {
-            font-size: 34px;
-            line-height: 1.1;
-            font-weight: 600;
-            letter-spacing: -0.005em;
-            margin-bottom: 12px;
+            font-size: 32px;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-sub);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             font-weight: 400;
         }
 
@@ -156,9 +183,9 @@
         }
 
         .current-price {
-            font-size: 32px;
-            font-weight: 600;
-            color: var(--text-main);
+            font-size: 36px;
+            font-weight: 800;
+            color: #1d1d1f;
         }
 
         .original-price {
@@ -169,18 +196,18 @@
         }
 
         .badge-discount {
-            background-color: #e30000;
+            background-color: var(--alert-red);
             color: white;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 8px;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 10px;
             border-radius: 6px;
         }
 
         /* Style des sélecteurs */
         .selector-title {
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 10px;
             color: var(--text-main);
         }
@@ -217,12 +244,12 @@
         .option-card.active {
             border: 2px solid var(--accent);
             padding: 13px;
-            background-color: #f7fbff;
+            background-color: #f0f7ff;
         }
 
         .option-title {
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             display: block;
         }
 
@@ -236,18 +263,18 @@
             position: absolute;
             top: -8px;
             right: 4px;
-            background: #0071e3;
+            background: var(--alert-red);
             color: white;
             font-size: 9px;
-            font-weight: 700;
+            font-weight: 800;
             padding: 2px 6px;
             border-radius: 8px;
         }
 
         /* Offre automatique 2 achetés */
         .bundle-offer {
-            background-color: #f2f8ff;
-            border: 1px solid #cce4ff;
+            background-color: #eef6ff;
+            border: 1px solid #b3d7ff;
             border-radius: 12px;
             padding: 14px 16px;
             margin-bottom: 24px;
@@ -259,15 +286,15 @@
         }
 
         .bundle-offer span {
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* Bouton d'action */
         .btn-buy {
             background-color: var(--accent);
             color: #ffffff;
-            font-size: 17px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 600;
             padding: 18px 32px;
             border-radius: 980px;
             border: none;
@@ -278,6 +305,7 @@
             text-decoration: none;
             display: block;
             box-sizing: border-box;
+            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
         }
 
         .btn-buy:hover {
@@ -320,28 +348,29 @@
 <body>
 
     <div class="promo-banner">
-        <strong>Déstockage exceptionnel :</strong> Stock d'origine constructeur en liquidation à -66%
+        <span class="highlight">LIQUIDATION</span> Vente flash exceptionnelle dans la limite des stocks restants.
     </div>
 
     <header>
-        <div class="brand-logo">Cadeau Malin</div>
+        <div class="brand-logo">DÉSTOCKAGE <span>EXCEPTIONAL</span></div>
     </header>
 
     <main>
         <div class="product-grid">
             
-            <!-- Image du Chargeur + Câble -->
+            <!-- Photo Studio Chargeur + Câble -->
             <div class="gallery-container">
                 <div class="main-image-box">
-                    <img id="product-image" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MU7V2_GEO_EMEA?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1542131580228" alt="Chargeur Rapide 35W avec Câble">
+                    <span class="stock-tag">⚠️ Plus que 14 unités</span>
+                    <img id="product-image" src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80" alt="Chargeur Rapide 35W + Câble Tressé">
                 </div>
             </div>
 
             <!-- Informations Produit -->
             <div class="product-details">
-                <span class="category-tag">Accessoire Officiel • Déstockage</span>
+                <span class="category-tag">Liquidation Lot Pro • Certifié Conforme</span>
                 <h1>Chargeur Ultra Rapide 35W + Câble</h1>
-                <p class="subtitle">Power Delivery 35W haute vitesse. Recharge complète jusqu'à 3x plus rapide qu'un chargeur classique.</p>
+                <p class="subtitle">Technologie Power Delivery 35W. Charge complète de votre téléphone 3x plus rapide qu'un bloc standard.</p>
 
                 <div class="price-box">
                     <span class="current-price" id="total-price">20,00 €</span>
@@ -350,7 +379,7 @@
                 </div>
 
                 <!-- Choix du connecteur -->
-                <div class="selector-title">1. Type de connecteur :</div>
+                <div class="selector-title">1. Choisissez votre embout :</div>
                 <div class="connector-selector">
                     <div class="option-card active" onclick="selectConnector(this)">
                         <span class="option-title">Lightning</span>
@@ -358,7 +387,7 @@
                     </div>
                     <div class="option-card" onclick="selectConnector(this)">
                         <span class="option-title">USB-C</span>
-                        <span class="option-desc">iPhone 15 / 16 / iPad</span>
+                        <span class="option-desc">iPhone 15 / 16 & iPad</span>
                     </div>
                 </div>
 
@@ -384,21 +413,21 @@
 
                 <!-- Message Promo -->
                 <div class="bundle-offer" id="bundle-info">
-                    <div>💡 <span>Offre avantage :</span> Ajoutez un 2ème chargeur pour bénéficier automatiquement de -15% supplémentaires !</div>
+                    <div>💡 <span>Offre spéciale :</span> Prenez-en un 2ème pour bénéficier automatiquement de -15% supplémentaires sur la commande !</div>
                 </div>
 
                 <!-- Bouton d'achat relié à Stripe -->
-                <a href="https://buy.stripe.com/aFafZj1oIa0L80h0X367S05" class="btn-buy" id="checkout-button">Acheter maintenant (20,00 €)</a>
+                <a href="https://buy.stripe.com/aFafZj1oIa0L80h0X367S05" class="btn-buy" id="checkout-button">Acheter maintenant — 20,00 €</a>
 
                 <!-- Éléments de réassurance -->
                 <div class="reassurance-list">
                     <div class="reassurance-item">
                         <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        Expédition Colissimo / Relay sous 24h avec suivi.
+                        Expédié sous 24h avec suivi Colissimo / Relay.
                     </div>
                     <div class="reassurance-item">
                         <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                        Paiement 100% sécurisé via Stripe.
+                        Paiement sécurisé crypté par Stripe.
                     </div>
                 </div>
 
@@ -407,7 +436,7 @@
     </main>
 
     <footer>
-        &copy; 2026 Cadeau Malin — Tous droits réservés. Vente de déstockage dans la limite des stocks disponibles.
+        &copy; 2026 Déstockage Pro — Tous droits réservés. Vente en liquidation directe.
     </footer>
 
     <script>
@@ -433,14 +462,14 @@
 
             if (qty >= 2) {
                 totalPrice = totalPrice * 0.85; // Remise de 15%
-                bundleInfo.innerHTML = `<div>🎉 <span>Promotion appliquée :</span> Vous économisez -15% sur votre commande !</div>`;
+                bundleInfo.innerHTML = `<div>🎉 <span>Promotion appliquée :</span> Vous économisez -15% supplémentaires sur votre lot !</div>`;
             } else {
-                bundleInfo.innerHTML = `<div>💡 <span>Offre avantage :</span> Ajoutez un 2ème chargeur pour bénéficier automatiquement de -15% supplémentaires !</div>`;
+                bundleInfo.innerHTML = `<div>💡 <span>Offre spéciale :</span> Prenez-en un 2ème pour bénéficier automatiquement de -15% supplémentaires sur la commande !</div>`;
             }
 
             document.getElementById('total-price').innerText = totalPrice.toFixed(2).replace('.', ',') + ' €';
             document.getElementById('original-price').innerText = totalOriginal.toFixed(2).replace('.', ',') + ' €';
-            btn.innerText = `Acheter maintenant (${totalPrice.toFixed(2).replace('.', ',')} €)`;
+            btn.innerText = `Acheter maintenant — ${totalPrice.toFixed(2).replace('.', ',')} €`;
         }
     </script>
 </body>
