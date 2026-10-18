@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WINTER — Tour de Cou Polaire Ultimate Warmth</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -14,16 +14,17 @@
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-2">
-                <span class="text-2xl font-extrabold tracking-tight text-slate-900 uppercase">Winter</span>
-                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Collection Hiver</span>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-900 uppercase">WINTER</span>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Édition Limitée</span>
             </div>
             <div class="flex items-center space-x-4">
-                <button onclick="toggleCart()" class="relative p-2 text-slate-700 hover:text-slate-900 transition">
-                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                    <span id="cart-badge" class="absolute top-0 right-0 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                <button onclick="toggleCart()" class="relative p-2 text-slate-700 hover:text-slate-900 transition flex items-center space-x-1 bg-slate-100 px-3 rounded-full">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="text-sm font-semibold">Panier</span>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
                 </button>
             </div>
         </div>
@@ -31,29 +32,29 @@
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
             
-            <!-- Gallery Section -->
-            <div class="space-y-4">
-                <div class="aspect-square bg-slate-100 rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex items-center justify-center">
-                    <img id="main-image" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800" alt="Tour de cou polaire Noir" class="w-full h-full object-cover transition duration-300">
+            <!-- Gallery Section (Vraies photos de cache-cou polaire) -->
+            <div class="space-y-4 sticky top-24">
+                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex items-center justify-center">
+                    <img id="main-image" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800" alt="Tour de cou polaire" class="w-full h-full object-cover transition duration-300">
                 </div>
                 <!-- Thumbnails -->
                 <div class="grid grid-cols-3 gap-4">
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800', 'Noir')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-slate-900 bg-slate-100 focus:outline-none">
-                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=300" alt="Noir" class="w-full h-full object-cover">
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', 'Noir')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-slate-900 bg-white shadow-sm focus:outline-none">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=300" alt="Noir" class="w-full h-full object-cover">
                     </button>
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', 'Gris')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-slate-100 focus:outline-none opacity-70 hover:opacity-100 transition">
-                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=300" alt="Gris" class="w-full h-full object-cover">
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800', 'Gris')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-white shadow-sm focus:outline-none opacity-70 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=300" alt="Gris" class="w-full h-full object-cover">
                     </button>
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800', 'Beige')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-slate-100 focus:outline-none opacity-70 hover:opacity-100 transition">
-                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=300" alt="Beige" class="w-full h-full object-cover">
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800', 'Beige')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-white shadow-sm focus:outline-none opacity-70 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=300" alt="Beige" class="w-full h-full object-cover">
                     </button>
                 </div>
             </div>
 
-            <!-- Product Details -->
-            <div class="flex flex-col justify-between space-y-6">
+            <!-- Product Details & Marketing Copy -->
+            <div class="flex flex-col space-y-6">
                 <div>
                     <div class="flex items-center space-x-2 mb-2">
                         <div class="flex text-amber-400">
@@ -63,57 +64,71 @@
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         </div>
-                        <span class="text-sm font-medium text-slate-600">4.9 / 5 (+50 000 ventes)</span>
+                        <span class="text-sm font-semibold text-slate-700">4.9 / 5 (Plus de 50 000 clients satisfaits)</span>
                     </div>
 
-                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Tour de Cou Polaire "Ultimate Warmth"</h1>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Tour de Cou Polaire "Ultimate Warmth"</h1>
                     
                     <div class="mt-4 flex items-baseline space-x-3">
                         <span class="text-3xl font-extrabold text-slate-900">15,00 €</span>
-                        <span class="text-sm text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md">En stock - Livraison rapide</span>
+                        <span class="text-xs text-emerald-700 font-bold bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wide">En stock • Prêt à expédier</span>
                     </div>
 
-                    <p class="mt-4 text-slate-600 leading-relaxed">
-                        Affrontez l'hiver bien au chaud ! Ce tour de cou combine l'élégance d'un tricot fin à l'extérieur et un cocon de douceur grâce à sa doublure polaire épaisse à l'intérieur. Fini le froid qui pique et les écharpes encombrantes.
-                    </p>
+                    <!-- Description persuasive -->
+                    <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
+                        <p class="font-medium text-slate-900 text-lg">
+                            Affrontez le froid glacial sans compromis sur votre style.
+                        </p>
+                        <p>
+                            Le tour de cou <strong class="text-slate-900">Ultimate Warmth</strong> associe l'élégance d'un tricot externe raffiné à un véritable cocon thermique grâce à sa <strong class="text-slate-900">doublure polaire épaisse ultra-douce</strong>. Fini les écharpes encombrantes qui se déroulent ou qui grattent le cou : enfilez-le en une seconde pour une protection intégrale contre le vent et les températures négatives.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Color Selection -->
-                <div class="space-y-3">
-                    <label class="block text-sm font-semibold text-slate-900">
-                        Couleur sélectionnée : <span id="selected-color-name" class="font-normal text-slate-600">Noir</span>
+                <div class="space-y-3 pt-2">
+                    <label class="block text-sm font-bold text-slate-900">
+                        Choisissez votre coloris : <span id="selected-color-name" class="font-semibold text-blue-600">Noir</span>
                     </label>
-                    <div class="flex space-x-3">
-                        <button onclick="selectColor('Noir', 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-slate-900 border-2 border-slate-900 ring-2 ring-offset-2 ring-slate-900 transition focus:outline-none" title="Noir"></button>
-                        <button onclick="selectColor('Gris', 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-slate-400 border-2 border-transparent transition focus:outline-none opacity-80 hover:opacity-100" title="Gris"></button>
-                        <button onclick="selectColor('Beige', 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-[#D4B28C] border-2 border-transparent transition focus:outline-none opacity-80 hover:opacity-100" title="Beige"></button>
+                    <div class="flex space-x-4">
+                        <button onclick="selectColor('Noir', 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-900 ring-4 ring-slate-900/20 transition focus:outline-none shadow-md" title="Noir"></button>
+                        <button onclick="selectColor('Gris', 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-slate-400 border-2 border-transparent transition focus:outline-none shadow-md opacity-75 hover:opacity-100" title="Gris"></button>
+                        <button onclick="selectColor('Beige', 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-[#D4B28C] border-2 border-transparent transition focus:outline-none shadow-md opacity-75 hover:opacity-100" title="Beige"></button>
                     </div>
                 </div>
 
                 <!-- Quantity & Add to Cart -->
-                <div class="space-y-4 pt-4 border-t border-slate-200">
+                <div class="space-y-4 pt-6 border-t border-slate-200">
                     <div class="flex items-center space-x-4">
-                        <div class="flex items-center border border-slate-300 rounded-xl bg-white">
-                            <button onclick="updateQty(-1)" class="px-3.5 py-2.5 text-slate-600 hover:text-slate-900 font-bold transition">-</button>
-                            <span id="quantity" class="w-8 text-center font-semibold">1</span>
-                            <button onclick="updateQty(1)" class="px-3.5 py-2.5 text-slate-600 hover:text-slate-900 font-bold transition">+</button>
+                        <div class="flex items-center border-2 border-slate-300 rounded-xl bg-white shadow-sm">
+                            <button onclick="updateQty(-1)" class="px-4 py-3 text-slate-600 hover:text-slate-900 font-bold transition text-lg">-</button>
+                            <span id="quantity" class="w-10 text-center font-bold text-lg">1</span>
+                            <button onclick="updateQty(1)" class="px-4 py-3 text-slate-600 hover:text-slate-900 font-bold transition text-lg">+</button>
                         </div>
-                        <button onclick="addToCart()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-slate-900/10 transition flex items-center justify-center space-x-2">
-                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <button onclick="addToCart()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-xl shadow-slate-900/15 transition flex items-center justify-center space-x-2 text-lg">
+                            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
                             <span>Ajouter au panier — <span id="btn-price">15,00</span> €</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Features list -->
-                <div class="grid grid-cols-2 gap-4 pt-4 text-sm text-slate-600 border-t border-slate-200">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-blue-600"></i>
-                        <span>Taille universelle unisexe</span>
+                <!-- Key Selling Points / Reassurance -->
+                <div class="grid grid-cols-2 gap-4 pt-6 text-sm font-medium text-slate-700 border-t border-slate-200 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+                        <span>Taille unique universelle (Unisexe)</span>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="truck" class="w-5 h-5 text-blue-600"></i>
-                        <span>Expédition rapide en 48h</span>
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="wind" class="w-5 h-5"></i></div>
+                        <span>Coupe-vent & Anti-froid extrême</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="smile" class="w-5 h-5"></i></div>
+                        <span>Matière ultra-douce (zéro picotement)</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="truck" class="w-5 h-5"></i></div>
+                        <span>Expédition rapide sous 24/48h</span>
                     </div>
                 </div>
 
@@ -122,26 +137,29 @@
     </main>
 
     <!-- Cart Sidebar Overlay -->
-    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden transition-opacity"></div>
     
     <!-- Cart Drawer -->
     <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="p-4 border-b border-slate-200 flex items-center justify-between">
-            <h2 class="text-lg font-bold text-slate-900">Votre Panier</h2>
-            <button onclick="toggleCart()" class="p-2 text-slate-500 hover:text-slate-900">
+        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <h2 class="text-xl font-extrabold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-blue-600"></i>
+                <span>Mon Panier</span>
+            </h2>
+            <button onclick="toggleCart()" class="p-2 text-slate-400 hover:text-slate-900 rounded-full hover:bg-slate-200/50 transition">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
         </div>
-        <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4">
-            <div class="text-center text-slate-500 py-12">Votre panier est vide</div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <div class="text-center text-slate-400 py-16">Votre panier est vide pour le moment.</div>
         </div>
-        <div class="p-4 border-t border-slate-200 bg-slate-50 space-y-4">
+        <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-4">
             <div class="flex justify-between text-lg font-bold text-slate-900">
-                <span>Total</span>
-                <span id="cart-total">0,00 €</span>
+                <span>Total de la commande</span>
+                <span id="cart-total" class="text-blue-600">0,00 €</span>
             </div>
-            <button onclick="alert('Commande validée avec succès ! Merci pour votre achat chez WINTER.')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-xl transition shadow-md">
-                Commander maintenant
+            <button onclick="alert('Redirection vers le paiement sécurisé... Merci de tester la boutique WINTER !')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-blue-600/20 text-lg">
+                Commander en toute sécurité
             </button>
         </div>
     </div>
@@ -168,10 +186,11 @@
             document.getElementById('main-image').src = imageUrl;
             
             document.querySelectorAll('.color-btn').forEach(btn => {
-                btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                btn.classList.remove('ring-4', 'ring-slate-900/25');
                 btn.style.borderColor = 'transparent';
             });
-            element.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+            element.classList.add('ring-4', 'ring-slate-900/25');
+            element.style.borderColor = '#0f172a';
         }
 
         function changeImage(imageUrl, colorName) {
@@ -207,7 +226,7 @@
         function renderCart() {
             const container = document.getElementById('cart-items');
             if (cartItemsData.length === 0) {
-                container.innerHTML = '<div class="text-center text-slate-500 py-12">Votre panier est vide</div>';
+                container.innerHTML = '<div class="text-center text-slate-400 py-16">Votre panier est vide pour le moment.</div>';
                 document.getElementById('cart-total').textContent = '0,00 €';
                 return;
             }
@@ -217,15 +236,16 @@
                 let itemTotal = item.qty * item.price;
                 total += itemTotal;
                 return `
-                    flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 shadow-sm
-                    <div class="flex items-center space-x-3">
-                        <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-xs uppercase">${item.color}</div>
-                        <div>
-                            <h4 class="font-semibold text-slate-900 text-sm">Tour de Cou Polaire</h4>
-                            <p class="text-xs text-slate-500">Coloris : ${item.color} | Qté : ${item.qty}</p>
+                    <div class="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-xs uppercase text-slate-700 border border-slate-200">${item.color}</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Tour de Cou Polaire</h4>
+                                <p class="text-xs text-slate-500">Coloris : <span class="font-semibold text-slate-700">${item.color}</span> | Qté : ${item.qty}</p>
+                            </div>
                         </div>
+                        <span class="font-extrabold text-slate-900 text-sm">${itemTotal.toFixed(2)} €</span>
                     </div>
-                    <span class="font-bold text-slate-900 text-sm">${itemTotal.toFixed(2)} €</span>
                 `;
             }).join('');
 
