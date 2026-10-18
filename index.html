@@ -3,432 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIQUIDATION OFFICIELLE — Chargeur Ultra Rapide 35W</title>
+    <title>WINTER — Tour de Cou Polaire Ultimate Warmth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            --bg-color: #fbfbfd;
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-sub: #86868b;
-            --accent: #0071e3;
-            --accent-hover: #0077ed;
-            --tag-bg: #f5f5f7;
-            --border-color: #d2d2d7;
-            --strike-color: #a1a1a6;
-            --alert-red: #e30000;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -.022em;
-        }
-
-        /* Bannière Déstockage Urgence */
-        .promo-banner {
-            background-color: #111111;
-            color: #ffffff;
-            text-align: center;
-            padding: 12px 16px;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            border-bottom: 2px solid var(--alert-red);
-        }
-
-        .promo-banner span.highlight {
-            background-color: var(--alert-red);
-            color: #ffffff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 700;
-            margin-right: 6px;
-        }
-
-        /* En-tête Vendeur */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding: 16px 24px;
-            text-align: center;
-        }
-
-        .brand-logo {
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            color: #1d1d1f;
-            text-transform: uppercase;
-        }
-
-        .brand-logo span {
-            color: var(--alert-red);
-        }
-
-        /* Layout Principal */
-        main {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 30px 20px 80px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 50px;
-                align-items: center;
-            }
-        }
-
-        /* Photo du Produit */
-        .gallery-container {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .main-image-box {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-            border: 1px solid rgba(0,0,0,0.08);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .main-image-box img {
-            width: 100%;
-            max-width: 380px;
-            height: auto;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-
-        .stock-tag {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #fff0f0;
-            color: var(--alert-red);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 12px;
-            border-radius: 20px;
-            border: 1px solid #ffcccc;
-            text-transform: uppercase;
-        }
-
-        /* Fiche Produit */
-        .product-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .category-tag {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--alert-red);
-            margin-bottom: 6px;
-        }
-
-        h1 {
-            font-size: 32px;
-            line-height: 1.15;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: var(--text-sub);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .price-box {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .current-price {
-            font-size: 36px;
-            font-weight: 800;
-            color: #1d1d1f;
-        }
-
-        .original-price {
-            font-size: 20px;
-            text-decoration: line-through;
-            color: var(--strike-color);
-            font-weight: 400;
-        }
-
-        .badge-discount {
-            background-color: var(--alert-red);
-            color: white;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        /* Style des sélecteurs */
-        .selector-title {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        .connector-selector {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .qty-selector {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .option-card {
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 14px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: var(--card-bg);
-            position: relative;
-        }
-
-        .option-card:hover {
-            border-color: #86868b;
-        }
-
-        .option-card.active {
-            border: 2px solid var(--accent);
-            padding: 13px;
-            background-color: #f0f7ff;
-        }
-
-        .option-title {
-            font-size: 15px;
-            font-weight: 700;
-            display: block;
-        }
-
-        .option-desc {
-            font-size: 12px;
-            color: var(--text-sub);
-            margin-top: 2px;
-        }
-
-        .qty-badge {
-            position: absolute;
-            top: -8px;
-            right: 4px;
-            background: var(--alert-red);
-            color: white;
-            font-size: 9px;
-            font-weight: 800;
-            padding: 2px 6px;
-            border-radius: 8px;
-        }
-
-        /* Offre automatique 2 achetés */
-        .bundle-offer {
-            background-color: #eef6ff;
-            border: 1px solid #b3d7ff;
-            border-radius: 12px;
-            padding: 14px 16px;
-            margin-bottom: 24px;
-            font-size: 13px;
-            color: #004085;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .bundle-offer span {
-            font-weight: 700;
-        }
-
-        /* Bouton d'action */
-        .btn-buy {
-            background-color: var(--accent);
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 18px 32px;
-            border-radius: 980px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s ease;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
-        }
-
-        .btn-buy:hover {
-            background-color: var(--accent-hover);
-        }
-
-        /* Garanties */
-        .reassurance-list {
-            margin-top: 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .reassurance-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            color: var(--text-sub);
-        }
-
-        .reassurance-item svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--text-sub);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 12px;
-            color: var(--text-sub);
-            border-top: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
 
-    <div class="promo-banner">
-        <span class="highlight">LIQUIDATION</span> Vente flash exceptionnelle dans la limite des stocks restants.
-    </div>
-
-    <header>
-        <div class="brand-logo">DÉSTOCKAGE <span>EXCEPTIONNEL</span></div>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-extrabold tracking-tight text-slate-900 uppercase">Winter</span>
+                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Collection Hiver</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2 text-slate-700 hover:text-slate-900 transition">
+                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+                    <span id="cart-badge" class="absolute top-0 right-0 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <div class="product-grid">
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
-            <!-- Photo de votre chargeur réel -->
-            <div class="gallery-container">
-                <div class="main-image-box">
-                    <span class="stock-tag">⚠️ Plus que 14 unités</span>
-                    <img id="product-image" src="1792101148074.jpg" alt="Chargeur Rapide 35W iPhone + Câble Tressé">
+            <!-- Gallery Section -->
+            <div class="space-y-4">
+                <div class="aspect-square bg-slate-100 rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex items-center justify-center">
+                    <img id="main-image" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800" alt="Tour de cou polaire Noir" class="w-full h-full object-cover transition duration-300">
+                </div>
+                <!-- Thumbnails -->
+                <div class="grid grid-cols-3 gap-4">
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800', 'Noir')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-slate-900 bg-slate-100 focus:outline-none">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=300" alt="Noir" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', 'Gris')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-slate-100 focus:outline-none opacity-70 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=300" alt="Gris" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800', 'Beige')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-slate-100 focus:outline-none opacity-70 hover:opacity-100 transition">
+                        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=300" alt="Beige" class="w-full h-full object-cover">
+                    </button>
                 </div>
             </div>
 
-            <!-- Informations Produit -->
-            <div class="product-details">
-                <span class="category-tag">Liquidation Lot Pro • Certifié Conforme</span>
-                <h1>Chargeur Ultra Rapide 35W + Câble iPhone</h1>
-                <p class="subtitle">Technologie Power Delivery 35W. Charge complète de votre téléphone 3x plus rapide qu'un bloc standard.</p>
+            <!-- Product Details -->
+            <div class="flex flex-col justify-between space-y-6">
+                <div>
+                    <div class="flex items-center space-x-2 mb-2">
+                        <div class="flex text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <span class="text-sm font-medium text-slate-600">4.9 / 5 (+50 000 ventes)</span>
+                    </div>
 
-                <div class="price-box">
-                    <span class="current-price" id="total-price">20,00 €</span>
-                    <span class="original-price" id="original-price">59,99 €</span>
-                    <span class="badge-discount" id="discount-tag">-66%</span>
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Tour de Cou Polaire "Ultimate Warmth"</h1>
+                    
+                    <div class="mt-4 flex items-baseline space-x-3">
+                        <span class="text-3xl font-extrabold text-slate-900">15,00 €</span>
+                        <span class="text-sm text-emerald-600 font-semibold bg-emerald-50 px-2.5 py-1 rounded-md">En stock - Livraison rapide</span>
+                    </div>
+
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Affrontez l'hiver bien au chaud ! Ce tour de cou combine l'élégance d'un tricot fin à l'extérieur et un cocon de douceur grâce à sa doublure polaire épaisse à l'intérieur. Fini le froid qui pique et les écharpes encombrantes.
+                    </p>
                 </div>
 
-                <!-- Choix du connecteur -->
-                <div class="selector-title">1. Choisissez votre embout :</div>
-                <div class="connector-selector">
-                    <div class="option-card active" onclick="selectConnector(this)">
-                        <span class="option-title">Lightning</span>
-                        <span class="option-desc">iPhone 8 à 14</span>
-                    </div>
-                    <div class="option-card" onclick="selectConnector(this)">
-                        <span class="option-title">USB-C</span>
-                        <span class="option-desc">iPhone 15 / 16 & iPad</span>
-                    </div>
-                </div>
-
-                <!-- Choix de la quantité -->
-                <div class="selector-title">2. Quantité souhaitée :</div>
-                <div class="qty-selector">
-                    <div class="option-card qty-card active" onclick="selectQty(this, 1)">
-                        <span class="option-title">1</span>
-                    </div>
-                    <div class="option-card qty-card" onclick="selectQty(this, 2)">
-                        <span class="qty-badge">-15%</span>
-                        <span class="option-title">2</span>
-                    </div>
-                    <div class="option-card qty-card" onclick="selectQty(this, 3)">
-                        <span class="qty-badge">-15%</span>
-                        <span class="option-title">3</span>
-                    </div>
-                    <div class="option-card qty-card" onclick="selectQty(this, 4)">
-                        <span class="qty-badge">-15%</span>
-                        <span class="option-title">4</span>
+                <!-- Color Selection -->
+                <div class="space-y-3">
+                    <label class="block text-sm font-semibold text-slate-900">
+                        Couleur sélectionnée : <span id="selected-color-name" class="font-normal text-slate-600">Noir</span>
+                    </label>
+                    <div class="flex space-x-3">
+                        <button onclick="selectColor('Noir', 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-slate-900 border-2 border-slate-900 ring-2 ring-offset-2 ring-slate-900 transition focus:outline-none" title="Noir"></button>
+                        <button onclick="selectColor('Gris', 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-slate-400 border-2 border-transparent transition focus:outline-none opacity-80 hover:opacity-100" title="Gris"></button>
+                        <button onclick="selectColor('Beige', 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-10 h-10 rounded-full bg-[#D4B28C] border-2 border-transparent transition focus:outline-none opacity-80 hover:opacity-100" title="Beige"></button>
                     </div>
                 </div>
 
-                <!-- Message Promo -->
-                <div class="bundle-offer" id="bundle-info">
-                    <div>💡 <span>Offre spéciale :</span> Prenez-en un 2ème pour bénéficier automatiquement de -15% supplémentaires sur la commande !</div>
+                <!-- Quantity & Add to Cart -->
+                <div class="space-y-4 pt-4 border-t border-slate-200">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center border border-slate-300 rounded-xl bg-white">
+                            <button onclick="updateQty(-1)" class="px-3.5 py-2.5 text-slate-600 hover:text-slate-900 font-bold transition">-</button>
+                            <span id="quantity" class="w-8 text-center font-semibold">1</span>
+                            <button onclick="updateQty(1)" class="px-3.5 py-2.5 text-slate-600 hover:text-slate-900 font-bold transition">+</button>
+                        </div>
+                        <button onclick="addToCart()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 px-6 rounded-xl shadow-lg shadow-slate-900/10 transition flex items-center justify-center space-x-2">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            <span>Ajouter au panier — <span id="btn-price">15,00</span> €</span>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Bouton d'achat relié à Stripe -->
-                <a href="https://buy.stripe.com/aFafZj1oIa0L80h0X367S05" class="btn-buy" id="checkout-button">Acheter maintenant — 20,00 €</a>
-
-                <!-- Éléments de réassurance -->
-                <div class="reassurance-list">
-                    <div class="reassurance-item">
-                        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        Expédié sous 24h avec suivi Colissimo / Relay.
+                <!-- Features list -->
+                <div class="grid grid-cols-2 gap-4 pt-4 text-sm text-slate-600 border-t border-slate-200">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-blue-600"></i>
+                        <span>Taille universelle unisexe</span>
                     </div>
-                    <div class="reassurance-item">
-                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                        Paiement sécurisé crypté par Stripe.
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="truck" class="w-5 h-5 text-blue-600"></i>
+                        <span>Expédition rapide en 48h</span>
                     </div>
                 </div>
 
@@ -436,41 +121,115 @@
         </div>
     </main>
 
-    <footer>
-        &copy; 2026 Déstockage Pro — Tous droits réservés. Vente en liquidation directe.
-    </footer>
+    <!-- Cart Sidebar Overlay -->
+    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-slate-900">Votre Panier</h2>
+            <button onclick="toggleCart()" class="p-2 text-slate-500 hover:text-slate-900">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-4">
+            <div class="text-center text-slate-500 py-12">Votre panier est vide</div>
+        </div>
+        <div class="p-4 border-t border-slate-200 bg-slate-50 space-y-4">
+            <div class="flex justify-between text-lg font-bold text-slate-900">
+                <span>Total</span>
+                <span id="cart-total">0,00 €</span>
+            </div>
+            <button onclick="alert('Commande validée avec succès ! Merci pour votre achat chez WINTER.')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-xl transition shadow-md">
+                Commander maintenant
+            </button>
+        </div>
+    </div>
 
+    <!-- Scripts -->
     <script>
-        function selectConnector(element) {
-            document.querySelectorAll('.connector-selector .option-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            element.classList.add('active');
+        lucide.createIcons();
+
+        let currentQty = 1;
+        let unitPrice = 15.00;
+        let selectedColor = 'Noir';
+        let cartCount = 0;
+        let cartItemsData = [];
+
+        function updateQty(change) {
+            currentQty = Math.max(1, currentQty + change);
+            document.getElementById('quantity').textContent = currentQty;
+            document.getElementById('btn-price').textContent = (currentQty * unitPrice).toFixed(2);
         }
 
-        function selectQty(element, qty) {
-            document.querySelectorAll('.qty-card').forEach(card => {
-                card.classList.remove('active');
+        function selectColor(colorName, imageUrl, element) {
+            selectedColor = colorName;
+            document.getElementById('selected-color-name').textContent = colorName;
+            document.getElementById('main-image').src = imageUrl;
+            
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-offset-2', 'ring-slate-900');
+                btn.style.borderColor = 'transparent';
             });
-            element.classList.add('active');
+            element.classList.add('ring-2', 'ring-offset-2', 'ring-slate-900');
+        }
 
-            const unitPrice = 20;
-            const originalUnitPrice = 59.99;
-            let totalPrice = unitPrice * qty;
-            let totalOriginal = originalUnitPrice * qty;
-            let bundleInfo = document.getElementById('bundle-info');
-            let btn = document.getElementById('checkout-button');
+        function changeImage(imageUrl, colorName) {
+            document.getElementById('main-image').src = imageUrl;
+            selectedColor = colorName;
+            document.getElementById('selected-color-name').textContent = colorName;
+        }
 
-            if (qty >= 2) {
-                totalPrice = totalPrice * 0.85; // Remise de 15%
-                bundleInfo.innerHTML = `<div>🎉 <span>Promotion appliquée :</span> Vous économisez -15% supplémentaires sur votre lot !</div>`;
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-overlay');
+            drawer.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function addToCart() {
+            cartCount += currentQty;
+            const badge = document.getElementById('cart-badge');
+            badge.textContent = cartCount;
+            badge.classList.remove('hidden');
+
+            const existingItem = cartItemsData.find(item => item.color === selectedColor);
+            if (existingItem) {
+                existingItem.qty += currentQty;
             } else {
-                bundleInfo.innerHTML = `<div>💡 <span>Offre spéciale :</span> Prenez-en un 2ème pour bénéficier automatiquement de -15% supplémentaires sur la commande !</div>`;
+                cartItemsData.push({ color: selectedColor, qty: currentQty, price: unitPrice });
             }
 
-            document.getElementById('total-price').innerText = totalPrice.toFixed(2).replace('.', ',') + ' €';
-            document.getElementById('original-price').innerText = totalOriginal.toFixed(2).replace('.', ',') + ' €';
-            btn.innerText = `Acheter maintenant — ${totalPrice.toFixed(2).replace('.', ',')} €`;
+            renderCart();
+            toggleCart();
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items');
+            if (cartItemsData.length === 0) {
+                container.innerHTML = '<div class="text-center text-slate-500 py-12">Votre panier est vide</div>';
+                document.getElementById('cart-total').textContent = '0,00 €';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cartItemsData.map(item => {
+                let itemTotal = item.qty * item.price;
+                total += itemTotal;
+                return `
+                    flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 shadow-sm
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-xs uppercase">${item.color}</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 text-sm">Tour de Cou Polaire</h4>
+                            <p class="text-xs text-slate-500">Coloris : ${item.color} | Qté : ${item.qty}</p>
+                        </div>
+                    </div>
+                    <span class="font-bold text-slate-900 text-sm">${itemTotal.toFixed(2)} €</span>
+                `;
+            }).join('');
+
+            document.getElementById('cart-total').textContent = total.toFixed(2) + ' €';
         }
     </script>
 </body>
