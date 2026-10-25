@@ -1,479 +1,372 @@
+```html
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA | Tour de Cou Thermique Doublé Polaire</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>AURA — L'Écharpe Alpine Hybrid</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            taupe: '#78716c',
+                            sand: '#f5f4f0',
+                            warmgray: '#e7e5e4',
+                            accent: '#262626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-main: #111111;
-            --text-muted: #666666;
-            --border-color: #e5e5e5;
-            --accent: #111111;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .cart-icon {
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .cart-badge {
-            background: var(--text-main);
-            color: white;
-            border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 10px;
-            position: absolute;
-            top: -8px;
-            right: -12px;
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 20px;
-            }
-            header {
-                padding: 15px 20px;
-            }
-        }
-
-        /* Product Gallery */
-        .gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .main-image-container {
-            width: 100%;
-            height: 500px;
-            background: #f7f7f7;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .main-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .thumbnails {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .thumb {
-            height: 90px;
-            background: #f7f7f7;
-            border-radius: 4px;
-            cursor: pointer;
-            overflow: hidden;
-            border: 1px solid transparent;
-            opacity: 0.6;
-            transition: 0.2s;
-        }
-
-        .thumb.active, .thumb:hover {
-            opacity: 1;
-            border-color: var(--text-main);
-        }
-
-        .thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Product Info */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .product-title {
-            font-size: 26px;
-            font-weight: 500;
-            letter-spacing: -0.5px;
-        }
-
-        .price-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .current-price {
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-        .old-price {
-            font-size: 16px;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-
-        .promo-tag {
-            background: #fdf2f2;
-            color: #d93838;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 8px;
-            border-radius: 2px;
-            text-transform: uppercase;
-        }
-
-        .description {
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* Options Selection */
-        .option-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .option-label {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .color-swatches {
-            display: flex;
-            gap: 12px;
-        }
-
-        .swatch {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            box-shadow: 0 0 0 1px #ddd;
-            transition: 0.2s;
-        }
-
-        .swatch.selected {
-            box-shadow: 0 0 0 2px var(--text-main);
-        }
-
-        /* Add to cart button */
-        .btn-add {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 18px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 20px;
-            transition: background 0.2s;
-        }
-
-        .btn-add:hover {
-            background: #333;
-        }
-
-        /* Reassurance */
-        .reassurance {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .reassurance-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 40px;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .review-card {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .stars {
-            color: #f59e0b;
-            font-size: 14px;
-        }
-
-        .review-text {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .review-author {
-            font-size: 12px;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-
-        /* Modal panier */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 6px;
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .modal-content h3 {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .modal-btn {
-            background: var(--text-main);
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f6; color: #111111; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-brand-dark selection:text-white">
 
-    <header>
-        <div class="logo">Aura</div>
-        <div class="cart-icon" onclick="openCart()">
-            Panier <span class="cart-badge" id="cartCount">0</span>
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-white text-xs tracking-widest text-center py-2.5 uppercase font-medium">
+        Livraison offerte dès 50€ d'achat · Retours sous 30 jours
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-[#faf9f6]/90 backdrop-blur-md border-b border-stone-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Mobile menu button -->
+            <button class="lg:hidden p-2 text-stone-900 focus:outline-none" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide text-stone-700">
+                <a href="#collection" class="hover:text-black transition-colors">COLLECTION</a>
+                <a href="#innovation" class="hover:text-black transition-colors">INNOVATION</a>
+                <a href="#details" class="hover:text-black transition-colors">DÉTAILS</a>
+                <a href="#avis" class="hover:text-black transition-colors">AVIS</a>
+            </nav>
+
+            <!-- Brand Logo -->
+            <div class="absolute left-1/2 transform -translate-x-1/2">
+                <a href="#" class="text-2xl font-bold tracking-[0.3em] text-stone-900">A U R A</a>
+            </div>
+
+            <!-- Action Icons -->
+            <div class="flex items-center space-x-5">
+                <button onclick="toggleCart()" class="relative p-2 text-stone-900 hover:opacity-70 transition-opacity flex items-center gap-1">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span id="cart-counter" class="absolute top-1 right-0 bg-brand-dark text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Galerie Photos -->
-        <div class="gallery">
-            <div class="main-image-container">
-                <img id="mainImage" src="https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg" alt="Tour de cou polaire">
-            </div>
-            <div class="thumbnails">
-                <div class="thumb active" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg')">
-                    <img src="https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg" alt="Vue 1">
-                </div>
-                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S1a00a12e5c024564bf5c5d0f6fa9b4a1g.jpg')">
-                    <img src="https://ae01.alicdn.com/kf/S1a00a12e5c024564bf5c5d0f6fa9b4a1g.jpg" alt="Vue 2">
-                </div>
-                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S263bc01b44ec49179d6c44955b9eeb7bM.jpg')">
-                    <img src="https://ae01.alicdn.com/kf/S263bc01b44ec49179d6c44955b9eeb7bM.jpg" alt="Vue 3">
-                </div>
-                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S55c5040e21074e6f966141c4826b1fb3E.jpg')">
-                    <img src="https://ae01.alicdn.com/kf/S55c5040e21074e6f966141c4826b1fb3E.jpg" alt="Vue 4">
-                </div>
-            </div>
-        </div>
-
-        <!-- Informations Produit -->
-        <div class="product-info">
-            <h1 class="product-title">Tour de Cou Thermique Doublé Polaire — Édition Hiver</h1>
+    <!-- Main Product Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            <div class="price-box">
-                <span class="current-price">19,99 €</span>
-                <span class="old-price">39,99 €</span>
-                <span class="promo-tag">-50% Offre Limitée</span>
-            </div>
-
-            <p class="description">
-                Conçu pour affronter les grands froids. Maille tricotée épaisse à l'extérieur et doublure intérieure en polaire ultra-douce. Idéal pour le sport en extérieur, le running, le vélo ou les trajets urbains quotidiens sans ressentir le vent glacial.
-            </p>
-
-            <!-- Sélection de la couleur -->
-            <div class="option-group">
-                <span class="option-label">Coloris : <span id="selectedColorName">Noir Onyx</span></span>
-                <div class="color-swatches">
-                    <div class="swatch selected" style="background: #1a1a1a;" onclick="selectColor(this, 'Noir Onyx')"></div>
-                    <div class="swatch" style="background: #71717a;" onclick="selectColor(this, 'Gris Ardoise')"></div>
-                    <div class="swatch" style="background: #78350f;" onclick="selectColor(this, 'Marron Châtaigne')"></div>
-                    <div class="swatch" style="background: #1e3a8a;" onclick="selectColor(this, 'Bleu Marine')"></div>
+            <!-- Gallery (Left - 7 Cols) -->
+            <div class="lg:col-span-7 space-y-4">
+                <div class="aspect-[4/5] bg-stone-200 overflow-hidden relative rounded-sm shadow-sm group">
+                    <img id="main-product-img" src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=1000" alt="L'Écharpe Alpine AURA" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-stone-900 text-xs px-3 py-1 uppercase tracking-widest font-semibold rounded-xs">
+                        Édition Hiver
+                    </div>
+                </div>
+                <!-- Thumbnail Grid -->
+                <div class="grid grid-cols-3 gap-4">
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=1000')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-stone-900 focus:outline-none transition-all">
+                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=400" alt="Thumbnail 1" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=1000')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-transparent hover:border-stone-400 focus:outline-none transition-all">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400" alt="Thumbnail 2" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage('https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=1000')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-transparent hover:border-stone-400 focus:outline-none transition-all">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=400" alt="Thumbnail 3" class="w-full h-full object-cover">
+                    </button>
                 </div>
             </div>
 
-            <button class="btn-add" onclick="addToCart()">Ajouter au panier — 19,99 €</button>
+            <!-- Product Details (Right - 5 Cols) -->
+            <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <div class="flex text-amber-500">
+                            ★★★★★
+                        </div>
+                        <span class="text-xs text-stone-500 font-medium tracking-wide">(142 avis vérifiés)</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-4xl font-light tracking-tight text-stone-900 mb-3">
+                        L'Écharpe Alpine — Hybrid
+                    </h1>
+                    <p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4">Cache-visage & Col Thermique Haute Densité</p>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-2xl font-semibold text-stone-950">29,00 €</span>
+                        <span class="text-lg text-stone-400 line-through">49,00 €</span>
+                        <span class="text-xs bg-stone-200 text-stone-800 px-2 py-0.5 font-medium rounded-xs">-40% Offre de lancement</span>
+                    </div>
+                </div>
 
-            <div class="reassurance">
-                <div class="reassurance-item">📦 Expédition rapide sous 24/48h</div>
-                <div class="reassurance-item">🛡️ Garantie confort thermique 30 jours</div>
-                <div class="reassurance-item">🔒 Paiement 100% sécurisé</div>
+                <hr class="border-stone-200">
+
+                <!-- Color Selection -->
+                <div class="space-y-3">
+                    <label class="block text-xs uppercase tracking-widest text-stone-600 font-medium">
+                        Couleur : <span id="selected-color-name" class="text-stone-900 font-bold">Noir Onyx</span>
+                    </label>
+                    <div class="flex items-center space-x-3">
+                        <button onclick="setColor('Noir Onyx', 'bg-stone-900', this)" class="color-btn w-9 h-9 rounded-full bg-stone-900 ring-2 ring-offset-2 ring-stone-900 transition-all focus:outline-none" title="Noir Onyx"></button>
+                        <button onclick="setColor('Gris Arctique', 'bg-stone-400', this)" class="color-btn w-9 h-9 rounded-full bg-stone-400 ring-2 ring-offset-2 ring-transparent transition-all focus:outline-none" title="Gris Arctique"></button>
+                        <button onclick="setColor('Beige Crème', 'bg-[#e3d7c8]', this)" class="color-btn w-9 h-9 rounded-full bg-[#e3d7c8] ring-2 ring-offset-2 ring-transparent transition-all focus:outline-none" title="Beige Crème"></button>
+                    </div>
+                </div>
+
+                <!-- Add to Cart CTA -->
+                <div class="space-y-4 pt-2">
+                    <button onclick="addToCart()" class="w-full bg-brand-dark text-white py-4 px-8 rounded-sm uppercase tracking-[0.2em] text-xs font-semibold hover:bg-stone-800 transition-all shadow-lg shadow-stone-900/10 active:scale-[0.99] flex items-center justify-center gap-3">
+                        <span>Ajouter au panier</span>
+                        <span>—</span>
+                        <span>29,00 €</span>
+                    </button>
+
+                    <div class="grid grid-cols-3 gap-2 text-center pt-2">
+                        <div class="p-3 bg-stone-100 rounded-sm">
+                            <svg class="w-5 h-5 mx-auto mb-1 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-[11px] text-stone-600 font-medium">Anti-vent extrême</span>
+                        </div>
+                        <div class="p-3 bg-stone-100 rounded-sm">
+                            <svg class="w-5 h-5 mx-auto mb-1 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                            <span class="text-[11px] text-stone-600 font-medium">Livraison 48h</span>
+                        </div>
+                        <div class="p-3 bg-stone-100 rounded-sm">
+                            <svg class="w-5 h-5 mx-auto mb-1 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <span class="text-[11px] text-stone-600 font-medium">Garantie 30 jours</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
         </div>
-    </div>
+    </main>
 
-    <!-- Avis Clients -->
-    <section class="reviews-section">
-        <h2 class="section-title">Avis Vérifiés (4.8 / 5)</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Parfait pour mes trajets matinaux à vélo. L'intérieur polaire est extrêmement doux et tient vraiment chaud."</p>
-                <div class="review-author">— Thomas V. (Bruxelles)</div>
+    <!-- Editorial Section (Style Zara / Minimalist) -->
+    <section id="innovation" class="bg-stone-900 text-white py-24 my-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span class="text-xs uppercase tracking-[0.3em] text-stone-400">Design & Performance</span>
+            <h2 class="text-3xl lg:text-5xl font-light tracking-tight leading-tight">
+                L'élégance architecturale au service du confort thermique.
+            </h2>
+            <p class="text-stone-300 max-w-2xl mx-auto text-sm lg:text-base font-light leading-relaxed">
+                Imaginée pour les environnements urbains exigeants et les activités outdoor, l'écharpe Alpine combine une maille tricotée dense anti-transpiration et un système de masque facial amovible instantané. Ne choisissez plus entre le style et la protection.
+            </p>
+        </div>
+    </section>
+
+    <!-- Detailed Grid Features -->
+    <section id="details" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-xs uppercase tracking-[0.2em] text-stone-500 font-semibold">Technologie 3-en-1</span>
+                <h3 class="text-2xl lg:text-3xl font-light text-stone-900">Adaptable à chaque instant de votre journée</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                    Portée en tour de cou classique élégant lors de vos rendez-vous, ou convertie en cagoule / cache-visage complet lors de vos sessions de course à pied ou de vélo par temps glacial. Sa texture douce préserve l'épiderme tout en bloquant les rafales glaciales.
+                </p>
+                <ul class="space-y-3 text-sm text-stone-700 font-medium">
+                    <li class="flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-stone-900 rounded-full"></span> Maille thermique double couche respirante
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-stone-900 rounded-full"></span> Zéro irritation (fibres cachemire douces)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-1.5 h-1.5 bg-stone-900 rounded-full"></span> Lavable en machine à 30°C sans perte d'élasticité
+                    </li>
+                </ul>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Super qualité, ne gratte pas du tout et coupe net le vent. Je recommande pour le sport d'hiver."</p>
-                <div class="review-author">— Sarah L.</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Reçu très vite, couleur fidèle à la photo. Le tissu est dense et de très bonne facture."</p>
-                <div class="review-author">— Marc D.</div>
+            <div class="aspect-[4/3] bg-stone-200 overflow-hidden rounded-sm shadow-sm">
+                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1000" alt="Texture maille écharpe" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
-    <!-- Modal Panier -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <h3>Article ajouté au panier !</h3>
-            <p style="font-size: 14px; color: #666;">Votre tour de cou thermique est bien dans votre panier.</p>
-            <button class="modal-btn" onclick="closeCart()">Continuer mes achats</button>
+    <!-- Customer Reviews Section -->
+    <section id="avis" class="bg-stone-100 py-20 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <span class="text-xs uppercase tracking-[0.2em] text-stone-500 font-semibold">Avis clients</span>
+                <h2 class="text-3xl font-light text-stone-900">Approuvé par notre communauté</h2>
+                <div class="flex justify-center text-amber-500 text-lg">★★★★★ <span class="text-stone-800 text-sm font-semibold ml-2">4.9 / 5</span></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <h4 class="font-semibold text-stone-900 text-sm">"Indispensable pour le vélo en hiver"</h4>
+                        <p class="text-stone-600 text-xs leading-relaxed">
+                            "Je fais 10km de vélo chaque matin pour aller au bureau. Cette écharpe cache-visage m'a sauvé la vie. Le design est tellement sobre et classe qu'on dirait un accessoire de haute couture."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                        <span class="font-medium text-stone-900">Thomas V.</span>
+                        <span>Achat vérifié · Bruxelles</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <h4 class="font-semibold text-stone-900 text-sm">"Douceur incroyable et style top"</h4>
+                        <p class="text-stone-600 text-xs leading-relaxed">
+                            "Commandée en coloris Beige Crème. La couleur est somptueuse, la maille est épaisse sans être lourde et ne gratte absolument pas le cou. Je recommande à 100%."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                        <span class="font-medium text-stone-900">Sarah L.</span>
+                        <span>Achat vérifié · Paris</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-sm shadow-sm space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="text-amber-500 text-sm">★★★★★</div>
+                        <h4 class="font-semibold text-stone-900 text-sm">"Qualité irréprochable"</h4>
+                        <p class="text-stone-600 text-xs leading-relaxed">
+                            "Livraison reçue en 48h. Le packaging est soigné et le produit dépasse mes attentes. Le système cache-visage est hyper pratique quand le vent glacial se lève."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
+                        <span class="font-medium text-stone-900">Marc D.</span>
+                        <span>Achat vérifié · Lyon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-stone-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="space-y-4">
+                <span class="text-white text-xl font-bold tracking-[0.3em]">AURA</span>
+                <p class="text-xs text-stone-400 leading-relaxed">
+                    Minimalisme fonctionnel & design intemporel pour affronter les saisons froides avec élégance.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Navigation</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#collection" class="hover:text-white transition-colors">Collection Hiver</a></li>
+                    <li><a href="#innovation" class="hover:text-white transition-colors">Technologie Alpine</a></li>
+                    <li><a href="#avis" class="hover:text-white transition-colors">Avis Clients</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Aide & Service</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition-colors">Suivre ma commande</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Retours & Échanges</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Contactez-nous</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xs uppercase tracking-widest font-semibold mb-4">Newsletter</h4>
+                <p class="text-xs mb-3">Recevez nos nouveautés en avant-première.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Votre email" class="bg-stone-800 border-none px-3 py-2 text-xs text-white focus:outline-none w-full rounded-l-sm">
+                    <button class="bg-white text-black px-4 text-xs font-semibold uppercase tracking-wider rounded-r-sm hover:bg-stone-200 transition-colors"> OK </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 mt-12 border-t border-stone-800 text-center text-xs text-stone-500">
+            © 2026 AURA Studio. Tous droits réservés.
+        </div>
+    </footer>
+
+    <!-- Simple Cart Slide-over Notification / Simulation -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-6 rounded-sm shadow-2xl space-y-6 text-center animate-in fade-in zoom-in duration-200">
+            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-xl font-bold">✓</div>
+            <div class="space-y-1">
+                <h3 class="text-lg font-semibold text-stone-900">Article ajouté au panier !</h3>
+                <p class="text-xs text-stone-500">L'Écharpe Alpine Hybrid (<span id="modal-color">Noir Onyx</span>)</p>
+            </div>
+            <div class="bg-stone-50 p-4 rounded-sm flex items-center justify-between text-sm">
+                <span class="text-stone-600">Total estimé :</span>
+                <span class="font-bold text-stone-900">29,00 €</span>
+            </div>
+            <div class="space-y-2">
+                <button onclick="alertCheckout()" class="w-full bg-brand-dark text-white py-3 rounded-sm uppercase tracking-[0.15em] text-xs font-semibold hover:bg-stone-800 transition-all">
+                    Procéder au paiement sécurisé
+                </button>
+                <button onclick="toggleCart()" class="w-full bg-transparent text-stone-600 py-2 text-xs font-medium hover:text-stone-900 transition-colors">
+                    Continuer mes achats
+                </button>
+            </div>
         </div>
     </div>
 
+    <!-- JavaScript Interactive Logic -->
     <script>
+        let currentSelectedColor = 'Noir Onyx';
         let cartCount = 0;
 
-        function changeImage(element, src) {
-            document.getElementById('mainImage').src = src;
-            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            element.classList.add('active');
+        function changeImage(src) {
+            document.getElementById('main-product-img').src = src;
         }
 
-        function selectColor(element, colorName) {
-            document.querySelectorAll('.swatch').forEach(s => s.classList.remove('selected'));
-            element.classList.add('selected');
-            document.getElementById('selectedColorName').innerText = colorName;
+        function setColor(colorName, colorClass, btnElement) {
+            currentSelectedColor = colorName;
+            document.getElementById('selected-color-name').innerText = colorName;
+            document.getElementById('modal-color').innerText = colorName;
+
+            // Reset ring states
+            document.querySelectorAll('.color-btn').forEach(btn => {
+                btn.classList.remove('ring-stone-950');
+                btn.classList.add('ring-transparent');
+            });
+            btnElement.classList.remove('ring-transparent');
+            btnElement.classList.add('ring-stone-950');
         }
 
         function addToCart() {
             cartCount++;
-            document.getElementById('cartCount').innerText = cartCount;
-            document.getElementById('cartModal').style.display = 'flex';
+            document.getElementById('cart-counter').innerText = cartCount;
+            document.getElementById('cart-modal').classList.remove('hidden');
         }
 
-        function closeCart() {
-            document.getElementById('cartModal').style.display = 'none';
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function alertCheckout() {
+            alert('Simulation de commande réussie ! Dans une version réelle, vous seriez redirigé vers Stripe / Shopify Checkout.');
+            toggleCart();
         }
     </script>
 </body>
 </html>
+```
