@@ -196,7 +196,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
         .option-label {
@@ -204,39 +204,6 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        .packs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .pack-card {
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 12px;
-            cursor: pointer;
-            text-align: center;
-            transition: 0.2s;
-            background: #fafafa;
-        }
-
-        .pack-card.selected {
-            border-color: var(--text-main);
-            background: #fff;
-            box-shadow: 0 0 0 1px var(--text-main);
-        }
-
-        .pack-title {
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .pack-price {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 4px;
         }
 
         .color-swatches {
@@ -270,7 +237,7 @@
             text-transform: uppercase;
             cursor: pointer;
             border-radius: 4px;
-            margin-top: 10px;
+            margin-top: 20px;
             transition: background 0.2s;
         }
 
@@ -283,7 +250,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-top: 10px;
+            margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
             font-size: 13px;
@@ -481,33 +448,14 @@
             <h1 class="product-title">Cache Cou Hiver Thermique — Tour de Cou Doublé Polaire</h1>
             
             <div class="price-box">
-                <span class="current-price" id="displayPrice">23,99 €</span>
-                <span class="old-price" id="displayOldPrice">47,98 €</span>
+                <span class="current-price">19,99 €</span>
+                <span class="old-price">39,99 €</span>
                 <span class="promo-tag">-50% Offre Limitée</span>
             </div>
 
             <p class="description">
-                Le <strong>cache cou hiver</strong> indispensable pour affronter les températures glaciales. Conçu avec une maille extérieure épaisse et une doublure intérieure en polaire ultra-douce, ce <strong>tour de cou thermique</strong> protège efficacement le cou et le bas du visage lors de vos activités sportives ou de vos trajets urbains.
+                Le <strong>cache cou hiver</strong> indispensable pour affronter les températures glaciales. Conçu avec une maille extérieure épaisse et une doublure intérieure en polaire ultra-douce, ce <strong>tour de cou thermique</strong> protège efficacement le cou et le bas du visage lors de vos activités sportives (running, vélo, randonnée) ou de vos trajets urbains.
             </p>
-
-            <!-- Sélection de la formule / Pack -->
-            <div class="option-group">
-                <span class="option-label">Choisissez votre offre :</span>
-                <div class="packs-grid">
-                    <div class="pack-card selected" onclick="selectPack(this, 1, 23.99, 47.98)">
-                        <div class="pack-title">1 Pièce</div>
-                        <div class="pack-price">23,99 €</div>
-                    </div>
-                    <div class="pack-card" onclick="selectPack(this, 2, 39.99, 79.98)">
-                        <div class="pack-title">Pack Duo (2)</div>
-                        <div class="pack-price">39,99 €</div>
-                    </div>
-                    <div class="pack-card" onclick="selectPack(this, 3, 54.99, 109.98)">
-                        <div class="pack-title">Pack Trio (3)</div>
-                        <div class="pack-price">54,99 €</div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Sélection de la couleur -->
             <div class="option-group">
@@ -520,7 +468,7 @@
                 </div>
             </div>
 
-            <button class="btn-add" id="btnAddText" onclick="addToCart()">Ajouter au panier — 23,99 €</button>
+            <button class="btn-add" onclick="addToCart()">Ajouter au panier — 19,99 €</button>
 
             <div class="reassurance">
                 <div class="reassurance-item">📦 Expédition rapide sous 24/48h</div>
@@ -573,31 +521,18 @@
     <div class="modal" id="cartModal">
         <div class="modal-content">
             <h3>Article ajouté au panier !</h3>
-            <p style="font-size: 14px; color: #666;" id="cartModalText">Votre cache cou thermique est bien dans votre panier.</p>
+            <p style="font-size: 14px; color: #666;">Votre cache cou thermique est bien dans votre panier.</p>
             <button class="modal-btn" onclick="closeCart()">Continuer mes achats</button>
         </div>
     </div>
 
     <script>
         let cartCount = 0;
-        let currentPrice = 23.99;
-        let currentQuantity = 1;
 
         function changeImage(element, src) {
             document.getElementById('mainImage').src = src;
             document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             element.classList.add('active');
-        }
-
-        function selectPack(element, qty, price, oldPrice) {
-            document.querySelectorAll('.pack-card').forEach(p => p.classList.remove('selected'));
-            element.classList.add('selected');
-            currentQuantity = qty;
-            currentPrice = price;
-            
-            document.getElementById('displayPrice').innerText = price.toFixed(2).replace('.', ',') + ' €';
-            document.getElementById('displayOldPrice').innerText = oldPrice.toFixed(2).replace('.', ',') + ' €';
-            document.getElementById('btnAddText').innerText = `Ajouter au panier — ${price.toFixed(2).replace('.', ',')} €`;
         }
 
         function selectColor(element, colorName) {
@@ -607,9 +542,8 @@
         }
 
         function addToCart() {
-            cartCount += currentQuantity;
+            cartCount++;
             document.getElementById('cartCount').innerText = cartCount;
-            document.getElementById('cartModalText').innerText = `Votre pack de ${currentQuantity} cache(s) cou thermique(s) est bien dans votre panier.`;
             document.getElementById('cartModal').style.display = 'flex';
         }
 
