@@ -3,253 +3,618 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINTER — Tour de Cou Polaire Ultimate Warmth</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- OPTIMISATION SEO GOOGLE -->
+    <title>Cache Cou Hiver Thermique | Tour de Doublé Polaire — AURA</title>
+    <meta name="description" content="Découvrez le meilleur cache cou hiver thermique et doublé polaire. Idéal pour le sport, le vélo, la moto et le running par temps glacial. Livraison rapide en Belgique.">
+    <meta name="keywords" content="cache cou hiver, tour de cou thermique, cache cou polaire, tour de cou sport hiver">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --border-color: #e5e5e5;
+            --accent: #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .cart-icon {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .cart-badge {
+            background: var(--text-main);
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+            header {
+                padding: 15px 20px;
+            }
+        }
+
+        /* Product Gallery */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image-container {
+            width: 100%;
+            height: 500px;
+            background: #f7f7f7;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .main-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .thumb {
+            height: 90px;
+            background: #f7f7f7;
+            border-radius: 4px;
+            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid transparent;
+            opacity: 0.6;
+            transition: 0.2s;
+        }
+
+        .thumb.active, .thumb:hover {
+            opacity: 1;
+            border-color: var(--text-main);
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-title {
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        .price-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .current-price {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .old-price {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .promo-tag {
+            background: #fdf2f2;
+            color: #d93838;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Options Selection */
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .option-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .pack-card {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+            background: #fafafa;
+        }
+
+        .pack-card.selected {
+            border-color: var(--text-main);
+            background: #fff;
+            box-shadow: 0 0 0 1px var(--text-main);
+        }
+
+        .pack-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .pack-price {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 12px;
+        }
+
+        .swatch {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 0 0 1px #ddd;
+            transition: 0.2s;
+        }
+
+        .swatch.selected {
+            box-shadow: 0 0 0 2px var(--text-main);
+        }
+
+        /* Add to cart button */
+        .btn-add {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn-add:hover {
+            background: #333;
+        }
+
+        /* Reassurance */
+        .reassurance {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .reassurance-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* SEO Content & FAQ Section */
+        .seo-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .seo-section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .seo-section p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-item {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .faq-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-card {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .review-author {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Modal panier */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 6px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modal-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .modal-btn {
+            background: var(--text-main);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-extrabold tracking-tight text-slate-900 uppercase">WINTER</span>
-                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Édition Limitée</span>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button onclick="toggleCart()" class="relative p-2 text-slate-700 hover:text-slate-900 transition flex items-center space-x-1 bg-slate-100 px-3 rounded-full">
-                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                    <span class="text-sm font-semibold">Panier</span>
-                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-blue-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
-                </button>
-            </div>
+    <header>
+        <div class="logo">Aura</div>
+        <div class="cart-icon" onclick="openCart()">
+            Panier <span class="cart-badge" id="cartCount">0</span>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+    <div class="container">
+        <!-- Galerie Photos -->
+        <div class="gallery">
+            <div class="main-image-container">
+                <img id="mainImage" src="https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg" alt="Cache cou hiver thermique doublé polaire">
+            </div>
+            <div class="thumbnails">
+                <div class="thumb active" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg')">
+                    <img src="https://ae01.alicdn.com/kf/S8f2d5e3f3b9c47e8b6b23d9b89781898K.jpg" alt="Vue 1 cache cou hiver">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S1a00a12e5c024564bf5c5d0f6fa9b4a1g.jpg')">
+                    <img src="https://ae01.alicdn.com/kf/S1a00a12e5c024564bf5c5d0f6fa9b4a1g.jpg" alt="Vue 2 tour de cou polaire">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S263bc01b44ec49179d6c44955b9eeb7bM.jpg')">
+                    <img src="https://ae01.alicdn.com/kf/S263bc01b44ec49179d6c44955b9eeb7bM.jpg" alt="Vue 3 coloris">
+                </div>
+                <div class="thumb" onclick="changeImage(this, 'https://ae01.alicdn.com/kf/S55c5040e21074e6f966141c4826b1fb3E.jpg')">
+                    <img src="https://ae01.alicdn.com/kf/S55c5040e21074e6f966141c4826b1fb3E.jpg" alt="Vue 4 interieur polaire">
+                </div>
+            </div>
+        </div>
+
+        <!-- Informations Produit -->
+        <div class="product-info">
+            <h1 class="product-title">Cache Cou Hiver Thermique — Tour de Cou Doublé Polaire</h1>
             
-            <!-- Gallery Section (Vraies photos de cache-cou polaire) -->
-            <div class="space-y-4 sticky top-24">
-                <div class="aspect-square bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 flex items-center justify-center">
-                    <img id="main-image" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800" alt="Tour de cou polaire" class="w-full h-full object-cover transition duration-300">
-                </div>
-                <!-- Thumbnails -->
-                <div class="grid grid-cols-3 gap-4">
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', 'Noir')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-slate-900 bg-white shadow-sm focus:outline-none">
-                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=300" alt="Noir" class="w-full h-full object-cover">
-                    </button>
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800', 'Gris')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-white shadow-sm focus:outline-none opacity-70 hover:opacity-100 transition">
-                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=300" alt="Gris" class="w-full h-full object-cover">
-                    </button>
-                    <button onclick="changeImage('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800', 'Beige')" class="thumb-btn aspect-square rounded-xl overflow-hidden border-2 border-transparent bg-white shadow-sm focus:outline-none opacity-70 hover:opacity-100 transition">
-                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=300" alt="Beige" class="w-full h-full object-cover">
-                    </button>
+            <div class="price-box">
+                <span class="current-price" id="displayPrice">23,99 €</span>
+                <span class="old-price" id="displayOldPrice">47,98 €</span>
+                <span class="promo-tag">-50% Offre Limitée</span>
+            </div>
+
+            <p class="description">
+                Le <strong>cache cou hiver</strong> indispensable pour affronter les températures glaciales. Conçu avec une maille extérieure épaisse et une doublure intérieure en polaire ultra-douce, ce <strong>tour de cou thermique</strong> protège efficacement le cou et le bas du visage lors de vos activités sportives ou de vos trajets urbains.
+            </p>
+
+            <!-- Sélection de la formule / Pack -->
+            <div class="option-group">
+                <span class="option-label">Choisissez votre offre :</span>
+                <div class="packs-grid">
+                    <div class="pack-card selected" onclick="selectPack(this, 1, 23.99, 47.98)">
+                        <div class="pack-title">1 Pièce</div>
+                        <div class="pack-price">23,99 €</div>
+                    </div>
+                    <div class="pack-card" onclick="selectPack(this, 2, 39.99, 79.98)">
+                        <div class="pack-title">Pack Duo (2)</div>
+                        <div class="pack-price">39,99 €</div>
+                    </div>
+                    <div class="pack-card" onclick="selectPack(this, 3, 54.99, 109.98)">
+                        <div class="pack-title">Pack Trio (3)</div>
+                        <div class="pack-price">54,99 €</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Product Details & Marketing Copy -->
-            <div class="flex flex-col space-y-6">
-                <div>
-                    <div class="flex items-center space-x-2 mb-2">
-                        <div class="flex text-amber-400">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <span class="text-sm font-semibold text-slate-700">4.9 / 5 (Plus de 50 000 clients satisfaits)</span>
-                    </div>
-
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Tour de Cou Polaire "Ultimate Warmth"</h1>
-                    
-                    <div class="mt-4 flex items-baseline space-x-3">
-                        <span class="text-3xl font-extrabold text-slate-900">15,00 €</span>
-                        <span class="text-xs text-emerald-700 font-bold bg-emerald-100 px-3 py-1 rounded-full uppercase tracking-wide">En stock • Prêt à expédier</span>
-                    </div>
-
-                    <!-- Description persuasive -->
-                    <div class="mt-6 space-y-4 text-slate-600 leading-relaxed">
-                        <p class="font-medium text-slate-900 text-lg">
-                            Affrontez le froid glacial sans compromis sur votre style.
-                        </p>
-                        <p>
-                            Le tour de cou <strong class="text-slate-900">Ultimate Warmth</strong> associe l'élégance d'un tricot externe raffiné à un véritable cocon thermique grâce à sa <strong class="text-slate-900">doublure polaire épaisse ultra-douce</strong>. Fini les écharpes encombrantes qui se déroulent ou qui grattent le cou : enfilez-le en une seconde pour une protection intégrale contre le vent et les températures négatives.
-                        </p>
-                    </div>
+            <!-- Sélection de la couleur -->
+            <div class="option-group">
+                <span class="option-label">Coloris : <span id="selectedColorName">Noir Onyx</span></span>
+                <div class="color-swatches">
+                    <div class="swatch selected" style="background: #1a1a1a;" onclick="selectColor(this, 'Noir Onyx')"></div>
+                    <div class="swatch" style="background: #71717a;" onclick="selectColor(this, 'Gris Ardoise')"></div>
+                    <div class="swatch" style="background: #78350f;" onclick="selectColor(this, 'Marron Châtaigne')"></div>
+                    <div class="swatch" style="background: #1e3a8a;" onclick="selectColor(this, 'Bleu Marine')"></div>
                 </div>
-
-                <!-- Color Selection -->
-                <div class="space-y-3 pt-2">
-                    <label class="block text-sm font-bold text-slate-900">
-                        Choisissez votre coloris : <span id="selected-color-name" class="font-semibold text-blue-600">Noir</span>
-                    </label>
-                    <div class="flex space-x-4">
-                        <button onclick="selectColor('Noir', 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-slate-900 border-2 border-slate-900 ring-4 ring-slate-900/20 transition focus:outline-none shadow-md" title="Noir"></button>
-                        <button onclick="selectColor('Gris', 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-slate-400 border-2 border-transparent transition focus:outline-none shadow-md opacity-75 hover:opacity-100" title="Gris"></button>
-                        <button onclick="selectColor('Beige', 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800', this)" class="color-btn w-12 h-12 rounded-full bg-[#D4B28C] border-2 border-transparent transition focus:outline-none shadow-md opacity-75 hover:opacity-100" title="Beige"></button>
-                    </div>
-                </div>
-
-                <!-- Quantity & Add to Cart -->
-                <div class="space-y-4 pt-6 border-t border-slate-200">
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center border-2 border-slate-300 rounded-xl bg-white shadow-sm">
-                            <button onclick="updateQty(-1)" class="px-4 py-3 text-slate-600 hover:text-slate-900 font-bold transition text-lg">-</button>
-                            <span id="quantity" class="w-10 text-center font-bold text-lg">1</span>
-                            <button onclick="updateQty(1)" class="px-4 py-3 text-slate-600 hover:text-slate-900 font-bold transition text-lg">+</button>
-                        </div>
-                        <button onclick="addToCart()" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-xl shadow-slate-900/15 transition flex items-center justify-center space-x-2 text-lg">
-                            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                            <span>Ajouter au panier — <span id="btn-price">15,00</span> €</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Key Selling Points / Reassurance -->
-                <div class="grid grid-cols-2 gap-4 pt-6 text-sm font-medium text-slate-700 border-t border-slate-200 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div class="flex items-center space-x-3">
-                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
-                        <span>Taille unique universelle (Unisexe)</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="wind" class="w-5 h-5"></i></div>
-                        <span>Coupe-vent & Anti-froid extrême</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="smile" class="w-5 h-5"></i></div>
-                        <span>Matière ultra-douce (zéro picotement)</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="truck" class="w-5 h-5"></i></div>
-                        <span>Expédition rapide sous 24/48h</span>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </main>
 
-    <!-- Cart Sidebar Overlay -->
-    <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs z-50 hidden transition-opacity"></div>
-    
-    <!-- Cart Drawer -->
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-            <h2 class="text-xl font-extrabold text-slate-900 flex items-center space-x-2">
-                <i data-lucide="shopping-bag" class="w-5 h-5 text-blue-600"></i>
-                <span>Mon Panier</span>
-            </h2>
-            <button onclick="toggleCart()" class="p-2 text-slate-400 hover:text-slate-900 rounded-full hover:bg-slate-200/50 transition">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-4">
-            <div class="text-center text-slate-400 py-16">Votre panier est vide pour le moment.</div>
-        </div>
-        <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-4">
-            <div class="flex justify-between text-lg font-bold text-slate-900">
-                <span>Total de la commande</span>
-                <span id="cart-total" class="text-blue-600">0,00 €</span>
+            <button class="btn-add" id="btnAddText" onclick="addToCart()">Ajouter au panier — 23,99 €</button>
+
+            <div class="reassurance">
+                <div class="reassurance-item">📦 Expédition rapide sous 24/48h</div>
+                <div class="reassurance-item">🛡️ Garantie confort thermique 30 jours</div>
+                <div class="reassurance-item">🔒 Paiement 100% sécurisé</div>
             </div>
-            <button onclick="alert('Redirection vers le paiement sécurisé... Merci de tester la boutique WINTER !')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-blue-600/20 text-lg">
-                Commander en toute sécurité
-            </button>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Section SEO & FAQ (Optimisée pour Google) -->
+    <section class="seo-section">
+        <h2>Guide & FAQ : Tout savoir sur notre cache cou hiver thermique</h2>
+        <p>Vous recherchez un <strong>cache cou hiver</strong> performant et confortable ? Notre tour de cou thermique répond aux exigences des sportifs et des citadins confrontés au froid polaire.</p>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>Quel est le meilleur cache cou pour l'hiver ?</h3>
+                <p>Un bon cache cou d'hiver doit combiner une maille externe coupe-vent et une doublure interne isolante comme la polaire pour retenir la chaleur corporelle sans irriter la peau.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Ce tour de cou convient-il pour le vélo et la course à pied ?</h3>
+                <p>Absolument. Sa conception tubulaire enveloppante et son intérieur en fourrure synthétique douce le rendent parfait pour le running matinal, le cyclisme ou la moto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis Clients -->
+    <section class="reviews-section">
+        <h2 class="section-title">Avis Vérifiés (4.8 / 5)</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Parfait pour mes trajets matinaux à vélo. L'intérieur polaire est extrêmement doux et tient vraiment chaud."</p>
+                <div class="review-author">— Thomas V. (Bruxelles)</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Super qualité, ne gratte pas du tout et coupe net le vent. Je recommande pour le sport d'hiver."</p>
+                <div class="review-author">— Sarah L.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Reçu très vite, couleur fidèle à la photo. Le tissu est dense et de très bonne facture."</p>
+                <div class="review-author">— Marc D.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Panier -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <h3>Article ajouté au panier !</h3>
+            <p style="font-size: 14px; color: #666;" id="cartModalText">Votre cache cou thermique est bien dans votre panier.</p>
+            <button class="modal-btn" onclick="closeCart()">Continuer mes achats</button>
+        </div>
+    </div>
+
     <script>
-        lucide.createIcons();
-
-        let currentQty = 1;
-        let unitPrice = 15.00;
-        let selectedColor = 'Noir';
         let cartCount = 0;
-        let cartItemsData = [];
+        let currentPrice = 23.99;
+        let currentQuantity = 1;
 
-        function updateQty(change) {
-            currentQty = Math.max(1, currentQty + change);
-            document.getElementById('quantity').textContent = currentQty;
-            document.getElementById('btn-price').textContent = (currentQty * unitPrice).toFixed(2);
+        function changeImage(element, src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
         }
 
-        function selectColor(colorName, imageUrl, element) {
-            selectedColor = colorName;
-            document.getElementById('selected-color-name').textContent = colorName;
-            document.getElementById('main-image').src = imageUrl;
+        function selectPack(element, qty, price, oldPrice) {
+            document.querySelectorAll('.pack-card').forEach(p => p.classList.remove('selected'));
+            element.classList.add('selected');
+            currentQuantity = qty;
+            currentPrice = price;
             
-            document.querySelectorAll('.color-btn').forEach(btn => {
-                btn.classList.remove('ring-4', 'ring-slate-900/25');
-                btn.style.borderColor = 'transparent';
-            });
-            element.classList.add('ring-4', 'ring-slate-900/25');
-            element.style.borderColor = '#0f172a';
+            document.getElementById('displayPrice').innerText = price.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('displayOldPrice').innerText = oldPrice.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('btnAddText').innerText = `Ajouter au panier — ${price.toFixed(2).replace('.', ',')} €`;
         }
 
-        function changeImage(imageUrl, colorName) {
-            document.getElementById('main-image').src = imageUrl;
-            selectedColor = colorName;
-            document.getElementById('selected-color-name').textContent = colorName;
-        }
-
-        function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-overlay');
-            drawer.classList.toggle('translate-x-full');
-            overlay.classList.toggle('hidden');
+        function selectColor(element, colorName) {
+            document.querySelectorAll('.swatch').forEach(s => s.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('selectedColorName').innerText = colorName;
         }
 
         function addToCart() {
-            cartCount += currentQty;
-            const badge = document.getElementById('cart-badge');
-            badge.textContent = cartCount;
-            badge.classList.remove('hidden');
-
-            const existingItem = cartItemsData.find(item => item.color === selectedColor);
-            if (existingItem) {
-                existingItem.qty += currentQty;
-            } else {
-                cartItemsData.push({ color: selectedColor, qty: currentQty, price: unitPrice });
-            }
-
-            renderCart();
-            toggleCart();
+            cartCount += currentQuantity;
+            document.getElementById('cartCount').innerText = cartCount;
+            document.getElementById('cartModalText').innerText = `Votre pack de ${currentQuantity} cache(s) cou thermique(s) est bien dans votre panier.`;
+            document.getElementById('cartModal').style.display = 'flex';
         }
 
-        function renderCart() {
-            const container = document.getElementById('cart-items');
-            if (cartItemsData.length === 0) {
-                container.innerHTML = '<div class="text-center text-slate-400 py-16">Votre panier est vide pour le moment.</div>';
-                document.getElementById('cart-total').textContent = '0,00 €';
-                return;
-            }
-
-            let total = 0;
-            container.innerHTML = cartItemsData.map(item => {
-                let itemTotal = item.qty * item.price;
-                total += itemTotal;
-                return `
-                    <div class="flex items-center justify-between p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center font-bold text-xs uppercase text-slate-700 border border-slate-200">${item.color}</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Tour de Cou Polaire</h4>
-                                <p class="text-xs text-slate-500">Coloris : <span class="font-semibold text-slate-700">${item.color}</span> | Qté : ${item.qty}</p>
-                            </div>
-                        </div>
-                        <span class="font-extrabold text-slate-900 text-sm">${itemTotal.toFixed(2)} €</span>
-                    </div>
-                `;
-            }).join('');
-
-            document.getElementById('cart-total').textContent = total.toFixed(2) + ' €';
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
         }
     </script>
 </body>
