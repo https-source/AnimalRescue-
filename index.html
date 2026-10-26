@@ -90,8 +90,8 @@
                         Édition Hiver
                     </div>
                 </div>
-                <!-- Thumbnail Grid (6 images) -->
-                <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                <!-- Thumbnail Grid (5 images restantes) -->
+                <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
                     <button onclick="changeImage('1n.jpg')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-stone-900 focus:outline-none transition-all">
                         <img src="1n.jpg" alt="Noir Onyx" class="w-full h-full object-cover">
                     </button>
@@ -106,9 +106,6 @@
                     </button>
                     <button onclick="changeImage('Noir.jpg')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-transparent hover:border-stone-400 focus:outline-none transition-all">
                         <img src="Noir.jpg" alt="Noir vue 2" class="w-full h-full object-cover">
-                    </button>
-                    <button onclick="changeImage('Gris.jpg')" class="aspect-square bg-stone-200 overflow-hidden rounded-xs border-2 border-transparent hover:border-stone-400 focus:outline-none transition-all">
-                        <img src="Gris.jpg" alt="Gris vue 3" class="w-full h-full object-cover">
                     </button>
                 </div>
             </div>
@@ -373,14 +370,11 @@
         }
 
         function redirectToStripe() {
-            // Encode la couleur pour qu'elle s'intègre proprement dans l'URL de paiement Stripe
+            // Encode la couleur pour l'intégrer proprement dans l'URL
             const encodedColor = encodeURIComponent(currentSelectedColor);
             
-            // Redirige vers le lien Stripe avec la couleur transmise en paramètre URL (ex: ?client_reference_id=...)
-            // Stripe permet de récupérer ce paramètre dans vos webhooks ou dashboard.
-            const stripeUrlWithColor = `${baseStripeUrl}?client_reference_id=${encodedColor}`;
-            
-            window.location.href = stripeUrlWithColor;
+            // Redirige vers le lien Stripe avec la couleur passée en paramètre URL
+            window.location.href = `${baseStripeUrl}?client_reference_id=${encodedColor}`;
         }
     </script>
 </body>
